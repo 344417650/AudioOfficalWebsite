@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — LUMINIUM STUDIO</title>
+    <!-- Modern typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- WebGL Library for advanced effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- WebGL Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom interactive cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><img src="logo.png" alt="Luminium Studio Logo" class="brand-logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="studio.html" class="nav-item">Studio</a>
+            <a href="portfolio.html" class="nav-item">Portfolio</a>
+            <a href="blog.html" class="nav-item">Blog</a>
+            <a href="#contact" class="nav-item contact-btn">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main data-scroll-container>
+
+        <!-- Studio / Founders -->
+        <section id="studio" class="founders-section" data-scroll-section>
+            <h2 class="section-title">The Founders</h2>
+            <div class="founders-grid">
+                <!-- G.K -->
+                <div class="founder-card" data-tilt>
+                    <div class="founder-info">
+                        <h3 class="founder-name">G.K</h3>
+                        <p class="founder-title">Music Director<br>Lead Composer</p>
+                        <hr class="founder-divider">
+                        <p class="founder-desc">原散爆网络、真有趣网络音频总监，曾任Vanguard Sound音频总监。</p>
+                        <div class="founder-skills">
+                            <span class="skill-tag">音乐制作</span>
+                            <span class="skill-tag">音频混音</span>
+                            <span class="skill-tag">母带处理</span>
+                            <span class="skill-tag">音响效果</span>
+                        </div>
+                        <div class="founder-works">
+                            <strong>代表作:</strong>担任《纳米核心》《少女前线》等项目音频总监；《边境》主作曲；参与《碧蓝航线》《战双帕弥什》等音乐制作。
+                        </div>
+                        <p class="founder-extra">精通商务级英日语，擅长海外资源整合，具多场演出主导经验。</p>
+                    </div>
+                </div>
+
+                <!-- Breakless -->
+                <div class="founder-card" data-tilt>
+                    <div class="founder-info">
+                        <h3 class="founder-name">Breakless</h3>
+                        <p class="founder-title">Sound Director<br>Lead Sound Designer / Audio Programmer</p>
+                        <hr class="founder-divider">
+                        <p class="founder-desc">原鹰角网络、不鸣科技音频总监，曾任Vanguard Sound音频设计师。</p>
+                        <div class="founder-skills">
+                            <span class="skill-tag">音效制作</span>
+                            <span class="skill-tag">方案设计</span>
+                            <span class="skill-tag">音频整合</span>
+                            <span class="skill-tag">音响效果</span>
+                        </div>
+                        <div class="founder-works">
+                            <strong>代表作:</strong>担任《明日方舟》项目音频总监；《梦幻模拟战》《恋与制作人》主音效；参与《使命召唤手游》《战双帕弥什》等音效制作。
+                        </div>
+                        <p class="founder-extra">精通常用引擎及对应语言的音频程序架构开发，具丰富音频方案策划与执行经验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust / Testimonials -->
+        <section class="trust-section" data-scroll-section>
+            <div class="testimonial">
+                <h2>Reliability & Creativity</h2>
+                <p>“Luminium Studio stands as a cornerstone of reliability and excellence. Their dedication to
+                    delivering top-notch AAA quality, swift response to feedback, and profound expertise make them an
+                    invaluable partner in game audio.”</p>
+                <div class="client-brand">Industry Leading Developers</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" data-scroll-section>
+            <div class="footer-content">
+                <div class="footer-cta">
+                    <h2>LIGHT &<br><span class="accent-text">SOUND</span></h2>
+                    <a href="mailto:hello@luminium.studio" class="email-link">HELLO@LUMINIUM.STUDIO</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 LUMINIUM STUDIO. ALL RIGHTS RESERVED.</p>
+                    <div class="socials">
+                        <a href="#">IG</a>
+                        <a href="#">X</a>
+                        <a href="#">AWWWARDS</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

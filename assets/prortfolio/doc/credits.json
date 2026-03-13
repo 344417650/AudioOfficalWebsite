@@ -1,0 +1,109 @@
+{
+  "credits": [
+    {
+      "file": "fellowmoon.jpg",
+      "title": "新月同行",
+      "company": "烛薪网络",
+      "platform": "PC / Mobile",
+      "role": "音乐总监 · 音效总监"
+    },
+    {
+      "file": "nixiang_tangsuo.jpg",
+      "title": "逆向坍塌：面包房行动",
+      "company": "散爆网络",
+      "platform": "PC",
+      "role": "音乐总监 · 合作音效 · 音频程序"
+    },
+    {
+      "file": "yanmie.jpg",
+      "title": "湮灭边界线",
+      "company": "",
+      "platform": "Mobile",
+      "role": "音乐总监 · 音效总监 · 音频程序"
+    },
+    {
+      "file": "shanyao_nikki.jpeg",
+      "title": "闪耀暖暖",
+      "company": "叠纸网络",
+      "platform": "Mobile",
+      "role": "合作作曲"
+    },
+    {
+      "file": "infinity_nikki.jpg",
+      "title": "无限暖暖",
+      "company": "叠纸",
+      "platform": "PC / Mobile",
+      "role": "合作作曲"
+    },
+    {
+      "file": "arknights_endfield.jpg",
+      "title": "明日方舟终末地",
+      "company": "鹰角网络",
+      "platform": "PC / Console",
+      "role": "合作音效"
+    },
+    {
+      "file": "yihuan.jpg",
+      "title": "异环",
+      "company": "",
+      "platform": "PC / Mobile",
+      "role": "合作音效"
+    },
+    {
+      "file": "girls_frontline_net.jpg",
+      "title": "少女前线 Project NET",
+      "company": "深蓝互动",
+      "platform": "PC / Mobile",
+      "role": "合作作曲 · 合作音效"
+    },
+    {
+      "file": "arknights.jpg",
+      "title": "明日方舟",
+      "company": "鹰角网络",
+      "platform": "PC / Mobile",
+      "role": "合作音效"
+    },
+    {
+      "file": "tower_of_fantasy.jpg",
+      "title": "幻塔",
+      "company": "完美世界",
+      "platform": "PC / Mobile / Console",
+      "role": "合作音效"
+    },
+    {
+      "file": "maifen.png",
+      "title": "出发吧麦芬",
+      "company": "心动网络",
+      "platform": "Mobile",
+      "role": "合作音效"
+    },
+    {
+      "file": "baijinghuilang.jpg",
+      "title": "白荆回廊",
+      "company": "",
+      "platform": "PC / Mobile",
+      "role": "合作作曲"
+    },
+    {
+      "file": "reverse_1999.jpg",
+      "title": "重返未来1999",
+      "company": "烛薪网络",
+      "platform": "PC / Mobile",
+      "role": "合作作曲"
+    },
+    {
+      "file": "azur_lane.jpg",
+      "title": "碧蓝航线",
+      "company": "",
+      "platform": "PC / Mobile",
+      "role": "合作作曲"
+    },
+    {
+      "file": "kalabiqiu.jpg",
+      "title": "卡拉比丘",
+      "company": "",
+      "platform": "Mobile",
+      "role": "合作作曲"
+    }
+  ]
+}

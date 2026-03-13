@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="robots" content="all">
+    <title>上海烛龙信息科技有限公司</title>
+    <link rel="stylesheet" href="./css/swiper.css">
+    <script>
+        var _isMobile_ = function () {
+            return /iphone|ios|android|mini|mobile|mobi|Nokia|Symbian|iPod|iPad|Windows\s+Phone|MQQBrowser|wp7|wp8|UCBrowser7|UCWEB|360\s+Aphone\s+Browser|blackberry/i.test(
+                navigator.userAgent
+            );
+        };
+        if (_isMobile_()) {
+            window.location.href = "/index_m.html";
+        }
+    </script>
+    <script>
+        //Screen adaptation 
+        (function (win, doc) {
+            if (!win.addEventListener) return;
+            var html = document.documentElement;
+            function setFont() {
+                var html = document.documentElement;
+                var k = 3840;
+                html.style.fontSize = html.clientWidth / k * 100 + "px";
+            }
+            setFont();
+            setTimeout(function () {
+                setFont();
+            }, 300);
+            doc.addEventListener('DOMContentLoaded', setFont, false);
+            win.addEventListener('resize', setFont, false);
+            win.addEventListener('load', setFont, false);
+        })(window, document);
+    </script>
+    <style>
+        @font-face {
+            font-family: 'font1';
+            src: url(./imgs/font1.otf);
+        }
+
+        @font-face {
+            font-family: 'font2';
+            src: url(./imgs/font2.otf);
+        }
+
+        @font-face {
+            font-family: 'font3';
+            src: url(./imgs/font3.otf);
+        }
+
+        /* reset */
+        body,
+        div,
+        p,
+        ul,
+        li,
+        table,
+        tbody,
+        tr,
+        td,
+        textarea,
+        form,
+        input,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        dl,
+        dt,
+        dd,
+        img,
+        iframe,
+        header,
+        nav,
+        section,
+        article,
+        footer,
+        figure,
+        figcaption,
+        menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+            font-size: 0.24rem;
+        }
+
+        header,
+        nav,
+        section,
+        article,
+        footer,
+        figure,
+        figcaption {
+            display: block;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            font-size: 100%
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        fieldset {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        li,
+        ul,
+        [onclick] {
+            -webkit-tap-highlight-color: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        em,
+        strong {
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .hide {
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .c:before,
+        .c:after {
+            content: "";
+            display: table;
+        }
+
+        .c:after {
+            clear: both;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .pr {
+            position: relative;
+        }
+
+        .pa {
+            position: absolute;
+        }
+
+        .db {
+            display: block;
+            text-indent: -999em;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            background-color: #0c0d0b;
+            overflow: hidden;
+        }
+
+        /*footer*/
+        .gray {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+            pointer-events: none;
+        }
+
+    
+
+        /* 页面 */
+        .mySwiper0 {
+            font-family: 'font1';
+        }
+
+        .swiper-button-prev.swiper-button-disabled,
+        .swiper-button-next.swiper-button-disabled,
+        .pg2_prev_btn.on,
+        .pg2_next_btn.on {
+            opacity: .35;
+            cursor: auto;
+            pointer-events: none
+        }
+
+        .head {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 1.5rem;
+            padding: 0 1.8rem;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            width: 1.75rem;
+            height: 0.82rem;
+            background: url(./imgs/logo.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .tabs1_box {
+            display: flex;
+            align-items: center;
+        }
+
+        .tabs1 {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .tabs1 .tabs1_btn {
+            font-size: 0.34rem;
+            color: #d7d7d7;
+            margin-left: 2rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .tabs1 .tabs1_btn.on {
+            color: #83d35d;
+        }
+
+        .tabs1 .tabs1_btn:hover {
+            color: #83d35d;
+        }
+
+        .tabs1_rt_btn {
+            font-size: 0.34rem;
+            color: #d7d7d7;
+            margin-left: 2rem;
+            cursor: pointer;
+        }
+
+        .tabs1_rt_btn:hover {
+            color: #83d35d;
+        }
+
+        .mySwiper0 .swiper-wrapper0 {
+            height: 21.6rem;
+        }
+
+        .swr0_cm_bod {
+            position: absolute;
+            z-index: 999;
+            bottom: 10%;
+            right: 1.3rem;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 4.5rem;
+        }
+
+        .swiper-pagination0 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            /* justify-content: center; */
+            width: 1.03rem;
+            height: 2.6rem;
+
+        }
+
+        .swr0_cm_bod.on {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .swiper-pagination0 .swiper-pagination-bullet {
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-shrink: 0;
+            border-radius: 0;
+            margin: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .swiper-pagination0 .swiper-pagination-bullet-active {
+            opacity: 1;
+            pointer-events: all;
+
+        }
+
+        .swiper-pagination0 .swiper-pagination-bullet:nth-child(2) {
+            width: 1.03rem;
+            height: 2.6rem;
+            background: url(./imgs/zsq_icon2.png) no-repeat 50% 0/100% 100%;
+
+        }
+
+        .swiper-pagination0 .swiper-pagination-bullet:nth-child(3) {
+            width: 1.03rem;
+            height: 2.6rem;
+            background: url(./imgs/zsq_icon3.png) no-repeat 50% 0/100% 100%;
+
+        }
+
+        .swiper-pagination0 .swiper-pagination-bullet:nth-child(4) {
+            width: 1.03rem;
+            height: 2.6rem;
+            background: url(./imgs/zsq_icon4.png) no-repeat 50% 0/100% 100%;
+
+        }
+
+        .swiper-pagination0 .swiper-pagination-bullet:nth-child(5) {
+            width: 1.03rem;
+            height: 2.6rem;
+            background: url(./imgs/zsq_icon5.png) no-repeat 50% 0/100% 100%;
+
+        }
+
+        .page {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-button-prev_pg0 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            width: 0.3rem;
+            height: 0.29rem;
+            cursor: pointer;
+            background: url(./imgs/top_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .swiper-button-next_pg0 {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0.3rem;
+            height: 0.29rem;
+            cursor: pointer;
+            background: url(./imgs/bot_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .swiper-button-prev_pg0.swiper-button-disabled {
+            background: url(./imgs/top_btn.png) no-repeat 50% 0/100% 100%;
+            opacity: 1;
+        }
+
+        .swiper-button-next_pg0.swiper-button-disabled {
+            background: url(./imgs/bot_btn.png) no-repeat 50% 0/100% 100%;
+            opacity: 1;
+        }
+
+        /* page1 */
+        .page1 {
+            background: url(./imgs/bg1.jpg) no-repeat 50% 0/cover;
+        }
+
+        .play_btn {
+            position: absolute;
+            top: 13.8rem;
+            left: 25.3rem;
+            width: 2.62rem;
+            height: 2rem;
+            cursor: pointer;
+            background: url(./imgs/play_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .xh_icon {
+            position: absolute;
+            top: 72%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3.77rem;
+            height: 2.46rem;
+            background: url(./imgs/xh_icon.png) no-repeat 50% 0/100% 100%;
+            animation: nextdm 2.5s linear infinite;
+        }
+
+        @-webkit-keyframes nextdm {
+            0% {
+                transform: translate(-50%, 0.3rem);
+            }
+
+            50% {
+                transform: translate(-50%, 0);
+            }
+
+            100% {
+                transform: translate(-50%, 0.3rem);
+            }
+        }
+
+        .pg1_btns {
+            position: absolute;
+            top: 6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 17rem;
+
+        }
+
+        .pg1_btns .xh_icon {
+            width: 3.77rem;
+            height: 2.46rem;
+            background: url(./imgs/xh_icon.png) no-repeat 50% 0/100% 100%;
+        }
+
+
+        /* page2 */
+        .page2 {
+            background: url(./imgs/bg2.jpg) no-repeat 50% 0/cover;
+        }
+
+        .page2.on {
+            background: url(./imgs/bg2_2.jpg) no-repeat 50% 0/cover;
+        }
+
+        .pg2_cont {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            width: 34.8rem;
+            height: 18rem;
+        }
+
+        .pg2_tabs1 {
+            display: flex;
+            justify-content: space-between;
+            width: 9.9rem;
+        }
+
+        .pg2_tabs1_btn1 {
+            width: 4.47rem;
+            height: 1.02rem;
+            cursor: pointer;
+            background: url(./imgs/tab1_btn1.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_tabs1_btn1.on {
+            background: url(./imgs/tab1_btn1_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_tabs1_btn2 {
+            width: 4.47rem;
+            height: 1.02rem;
+            cursor: pointer;
+            background: url(./imgs/tab1_btn2.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_tabs1_btn2.on {
+            background: url(./imgs/tab1_btn2_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_tab_cont {
+            display: none;
+            margin-top: 1rem;
+            min-height: 12rem;
+        }
+
+        .pg2_tab_cont.active {
+            display: block;
+        }
+
+        .pg2_lt_fgx {
+            width: 11.53rem;
+            font-size: 1rem;
+            color: #000000;
+            font-family: 'font2';
+            padding-bottom: 0.4rem;
+            box-sizing: border-box;
+            background: url(./imgs/pg2_lt_fgx.png) no-repeat 50% 100%/100% 0.09rem;
+
+        }
+
+        .pg2_lt_txt {
+            width: 11.5rem;
+            font-size: 0.34rem;
+            color: #000000;
+            margin-top: 0.4rem;
+            text-indent: 2em;
+            line-height: 1.8;
+        }
+
+        .pg2_jsk {
+            display: flex;
+            width: 13.33rem;
+            height: 3.35rem;
+            border: 1px solid #d8d8d8;
+            border-right: none;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            margin-top: 0.6rem;
+        }
+
+        .pg2_jsk .txt_itm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            border-right: 1px solid #dfdfdf;
+            font-size: 0.48rem;
+            color: #000000;
+        }
+
+        .pg2_jrwm_btn {
+            width: 6.59rem;
+            height: 1.27rem;
+            margin-top: 1.4rem;
+            cursor: pointer;
+            background: url(./imgs/jrwm_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        /* pg2_tab_cont_sub2 */
+        .pg2_tab_cont_sub2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .pg2_tab_cont_sub2 .pg2_lt_fgx {
+            width: 11.53rem;
+            font-size: 1rem;
+            color: #000000;
+            font-family: 'font2';
+            padding-bottom: 0.4rem;
+            box-sizing: border-box;
+            text-align: right;
+            background: url(./imgs/pg2_lt_fgx.png) no-repeat 50% 100%/100% 0.09rem;
+
+        }
+
+        .pg2_tab_cont_sub2 .pg2_lt_txt {
+            width: 11.5rem;
+            font-size: 0.34rem;
+            color: #000000;
+            margin-top: 0.2rem;
+            text-indent: 2em;
+            line-height: 1.8;
+            text-align: right;
+        }
+
+        .year_box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 1rem;
+            box-sizing: border-box;
+            margin-top: 1.3rem;
+        }
+
+        .pg2_dased_icon {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 33.23rem;
+            height: 0.05rem !important;
+            background: url(./imgs/pg2_dased_icon.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_dased_icon .year_itm {
+            position: relative;
+            width: 1.19rem;
+            height: 1.1rem;
+            cursor: pointer;
+            background: url(./imgs/zsq_icon.png) no-repeat 50% 50%/0.39rem 0.38rem;
+        }
+
+        .pg2_dased_icon .year_itm.on {
+            background: url(./imgs/zsq_icon_h.png) no-repeat 50% 50%/100% 100%;
+        }
+
+        .pg2_dased_icon .year_itm .year_num {
+            position: absolute;
+            top: -0.7rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.44rem;
+            color: #818181;
+        }
+
+        .pg2_dased_icon .year_itm.on .year_num {
+            top: -0.8rem;
+            font-size: 0.5rem;
+            color: #3e3e3e;
+        }
+
+        .pg2_dased_icon .year_itm .year_cont {
+            display: none;
+            position: absolute;
+            top: 2.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.45rem;
+            color: #3e3e3e;
+            white-space: nowrap;
+            cursor: auto;
+        }
+
+        .pg2_dased_icon .year_itm.on .year_cont {
+            display: block;
+        }
+
+
+        .pg2_prev_btn {
+            position: absolute;
+            left: 0;
+            width: 0.58rem;
+            height: 0.6rem;
+            cursor: pointer;
+            background: url(./imgs/prev_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_prev_btn.on {
+            pointer-events: none;
+            background: url(./imgs/prev_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_next_btn {
+            position: absolute;
+            right: 0;
+            width: 0.58rem;
+            height: 0.6rem;
+            cursor: pointer;
+            background: url(./imgs/next_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg2_next_btn.on {
+            pointer-events: none;
+            background: url(./imgs/next_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        /* page3 */
+        .page3 {
+            background: url(./imgs/bg3.jpg) no-repeat 50% 0/cover;
+        }
+
+
+        .pg3_swp {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            max-width: 38.4rem;
+            max-height: 21.6rem;
+        }
+        .pg3_swp .swiper-slide{
+            position: relative;
+
+        }
+        .jrgw_btn{
+            position: absolute;
+            top: 3.42rem;
+            left: 11.6rem;
+            width: 2.78rem;
+            height: 1.01rem;
+            background: url(./imgs/jrgw_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg3_swp .swiper-slide img {
+            width: 100%;
+        }
+
+        .pg3_swp2_box {
+            position: absolute;
+            top: 7.76rem;
+            left: 1.8rem;
+            width: 13.4rem;
+        }
+
+        /* pg3_swp2 */
+        .pg3_swp2 {
+            width: 11.7rem;
+            height: 2.26rem;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .pg3_swp2 .swiper-wrapper {
+
+            flex-shrink: 0;
+        }
+
+        .pg3_swp2 .swiper-slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.26rem;
+            height: 2.26rem;
+        }
+
+        /* .pg3_swp2 .swiper-slide::after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        } */
+        .pg3_swp2 .swiper-slide.swiper-slide-thumb-active::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+            width: 2.26rem;
+            height: 2.26rem;
+            background: url(./imgs/pg3_img_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .pg3_swp2 .swiper-slide img {
+            width: 2.1rem;
+            height: 2.1rem;
+        }
+
+        .swiper-button-prev_pg3s2 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 99;
+            width: 0.58rem;
+            height: 0.6rem;
+            cursor: pointer;
+            background: url(./imgs/prev_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .swiper-button-prev_pg3s2.swiper-button-disabled {
+            background: url(./imgs/prev_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .swiper-button-next_pg3s2 {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 99;
+            width: 0.58rem;
+            height: 0.6rem;
+            cursor: pointer;
+            background: url(./imgs/next_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .swiper-button-next_pg3s2.swiper-button-disabled {
+            background: url(./imgs/next_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        /* page4 */
+        .page4 {
+            background: url(./imgs/bg4.jpg) no-repeat 50% 0/cover;
+        }
+
+        .pg4_jrwm_btn {
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            transform: translateX(-50%);
+            width: 6.59rem;
+            height: 1.27rem;
+            background: url(./imgs/jrwm_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+
+        /* hire_page_box */
+        .hire_page_box {
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* 招聘页 */
+        .hire_page {
+            position: relative;
+            width: 38.4rem;
+            height: 52.83rem;
+            padding-top: 21.93rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+            background: url(./imgs/hire_bg.jpg) no-repeat 50% 0/100% 100%;
+        }
+
+        .hire_jrwm_btn {
+            position: absolute;
+            left: 50%;
+            top: 15.05rem;
+            transform: translateX(-50%);
+            width: 6.59rem;
+            height: 1.27rem;
+            margin: 0 auto;
+            cursor: pointer;
+            background: url(./imgs/jrwm_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .hire_page .zpy_tit {
+            width: 12.13rem;
+            height: 1.23rem;
+            margin: 0 auto;
+            background: url(./imgs/zpy_tit.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .hire_cont {
+            position: relative;
+            width: 31.2rem;
+            min-height: 25.75rem;
+            overflow-x: hidden;
+            margin: 1.1rem auto 0;
+        }
+
+        .hire_cont .swiper-slide{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+        }
+        .hire_cont .sub_tit_box{
+            display: flex;
+            width: 31rem;
+            margin: 0 auto;
+        }
+        .hire_cont .sub_tit_box .sub_tit{
+           width: 50%;
+           font-size: 0.7rem;
+           color: #3d3d3d;
+        }
+        .p4_row{
+            display: flex;
+            align-items: center;
+            width: 31rem;
+            height: 2.17rem;
+            border: 0.06rem solid #eeeeee;
+            border-radius: 0.1rem;
+            margin-top: 0.6rem;
+            padding: 0 1rem;
+            box-sizing: border-box;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        /* .p4_row.on{
+            border: 0.06rem solid #5e9445;
+        } */
+        .p4_row:hover{
+            border: 0.06rem solid #5e9445;
+        }
+        .p4_row .row_itm{
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 50%;
+            font-size: 0.5rem;
+            color: #737373;
+        }
+        .p4_row .rz_icon{
+            width: 0.36rem;
+            height: 0.67rem;
+            margin-left: 0.3rem;
+            background: url(./imgs/rz_icon.png) no-repeat 50% 0/100% 100%;
+        }
+        .p4_row .more_btn{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 4.47rem;
+            height: 1.02rem;
+            cursor: pointer;
+            background: url(./imgs/more_btn.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .hire_zsq_btns{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 6.66rem;
+            margin: 0.8rem auto 0;
+        }
+        .swiper-button-prev_pg4 {
+            width: 0.58rem;
+            height: 0.6rem;
+            cursor: pointer;
+            background: url(./imgs/prev_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .swiper-button-prev_pg4.swiper-button-disabled {
+            background: url(./imgs/prev_btn.png) no-repeat 50% 0/100% 100%;
+        }
+        .swiper-pagination_pg4{
+
+        }
+        .swiper-pagination_pg4 .swiper-pagination-bullet{
+             width: 1.19rem;
+            height: 1.1rem;
+            background: url(./imgs/zsq_icon.png) no-repeat 50% 50%/0.39rem 0.38rem;
+        }
+        .swiper-pagination_pg4 .swiper-pagination-bullet-active{
+            width: 1.19rem;
+            height: 1.1rem;
+            background: url(./imgs/zsq_icon_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        /* .zpy_zsq_icon{
+            width: 5.55rem;
+            height: 1.1rem;
+            background: url(./imgs/zpy_zsq_icon.png) no-repeat 50% 0/100% 100%;
+        } */
+        .swiper-button-next_pg4 {
+            width: 0.58rem;
+            height: 0.6rem;
+            cursor: pointer;
+            background: url(./imgs/next_btn_h.png) no-repeat 50% 0/100% 100%;
+        }
+
+        .swiper-button-next_pg4.swiper-button-disabled {
+            background: url(./imgs/next_btn.png) no-repeat 50% 0/100% 100%;
+        }
+        .footer_box{
+            width: 34.8rem;
+            height: 8.41rem;
+            background: url(./imgs/footer_bg.jpg) no-repeat 50% 0/100% 100%;
+        }
+        .foot_tp{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 30rem;
+            height: 4.29rem;
+            margin: 0 auto;
+        }
+        .foot_itm{
+
+        }
+        .footer_box .foot_itm .foot_hx_icon {
+            width: 6.27rem;
+            font-size: 0.34rem;
+            color: #fff;
+            font-family: 'font2';
+            padding-bottom: 0.2rem;
+            box-sizing: border-box;
+            background: url(./imgs/foot_hx_icon.png) no-repeat 50% 100%/100% 0.04rem;
+
+        }
+        .footer_box .txt_row{
+            font-size: 0.26rem;
+            color: #d8d8d8;
+            margin-top: 0.25rem;
+        }
+        .footer_box .txt_row a{
+            color: #a6d292;
+            text-decoration: underline;
+        }
+        .foot_bt{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 4.08rem;
+            background-color: #000000;
+        }
+        .foot_icon{
+            width: 3.78rem;
+            height: 1.33rem;
+            background: url(./imgs/foot_icon.png) no-repeat 50% 0/100% 100%;
+        }
+        .tp_txt_box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 1.4rem;
+        }
+        .footer_box .tp_txt_box .tp_txt{
+            font-size: 0.28rem;
+            color: #d8d8d8;
+            line-height: 1.8;
+        }
+
+ 
+        /*  ------------弹窗------------ */
+        /* 简单地让视频居中显示 */
+        #videoContainer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: auto;
+            background-color: black;
+            z-index: 99999;
+            /* 确保视频位于最上层 */
+        }
+
+        /* 视频样式 */
+        #myVideo1 {
+            width: 100%;
+            height: auto;
+        }
+
+        /* 关闭按钮样式 */
+        #closeVideoBtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 9999;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-image: url(../imgs/close.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: transform 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+
+
+        /* 弹窗遮罩 */
+        .mask {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9990;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="head">
+            <a class="logo db" href="#"></a>
+            <div class="tabs1_box">
+                <div class="tabs1">
+                    <div class="tabs1_btn on">首页</div>
+                    <div class="tabs1_btn">了解我们</div>
+                    <div class="tabs1_btn">游戏产品</div>
+                </div>
+                <div class="tabs1_rt_btn nav_jrwm_btn">加入我们</div>
+                <a class="tabs1_rt_btn" href="mailto:hezuo@wangyuan.com">商务合作</a>
+            </div>
+
+        </div>
+
+        <div class="swiper-container mySwiper0">
+
+            <div class="swiper-wrapper swiper-wrapper0">
+                <div class="swiper-slide page page1">
+
+                    <!-- 视频播放按钮 -->
+                    <div class="db play_btn" id="playVideoBtn"></div>
+
+                    <!-- 下滑引导 -->
+                    <div class="xh_icon"></div>
+                </div>
+                <div class="swiper-slide page page2">
+                    <div class="pg2_cont">
+                        <div class="pg2_tabs1">
+                            <div class="db pg2_tabs1_btn pg2_tabs1_btn1 on">关于我们</div>
+                            <div class="db pg2_tabs1_btn pg2_tabs1_btn2">发展历程</div>
+                        </div>
+                        <div class="pg2_tab_cont active">
+                            <div class="pg2_lt_fgx">关于我们</div>
+                            <div class="pg2_lt_txt">
+                                上海烛龙信息科技有限公司（Aurogon Info&Tech (Shanghai) Co.,
+                                Ltd.）于2007年在上海浦东正式成立，深耕东方幻想题材和《古剑奇谭》IP。我们立志于民族精品游戏的研发，力求打造最好的中文RPG游戏，以卓越的游戏体验，将中国文化与世界联结。
+                            </div>
+                            <div class="pg2_jsk">
+                                <div class="txt_itm">
+                                    2007 <br>正式成立
+                                </div>
+                                <div class="txt_itm">
+                                    古剑<br>奇谭
+                                </div>
+                                <div class="txt_itm">
+                                    白荆<br>回廊
+                                </div>
+                                <div class="txt_itm">
+                                    心渊<br>梦境
+                                </div>
+                            </div>
+                            <div class="pg2_jrwm_btn"></div>
+
+                        </div>
+
+                        <div class="pg2_tab_cont">
+                            <div class="pg2_tab_cont_sub2">
+                                <div class="pg2_lt_fgx">发展历程</div>
+                                <div class="pg2_lt_txt">
+                                    用快乐的方式传承中国文化 <br> 以卓越的游戏体验，将中国文化与世界联结
+                                </div>
+                                <div class="year_box">
+                                    <div class="pg2_prev_btn db"></div>
+
+                                    <div class="pg2_dased_icon">
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2007</div>
+                                            <div class="year_cont">
+                                                10月：上海烛龙成立
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2010</div>
+                                            <div class="year_cont">
+                                                7月：《古剑奇谭》发行， <br>
+                                                单月销量突破60万套
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2012</div>
+                                            <div class="year_cont">
+                                                8月：《古剑奇谭》原著剧情小说《古剑奇谭•琴心剑魄》 <br>
+                                                及系列世界观小说《神渊古纪•烽烟绘卷》正式发售
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2013</div>
+                                            <div class="year_cont">
+                                                8月：《古剑奇谭二：永夜初晗凝碧天》发行 <br><br>
+                                                12月：《古剑奇谭二：永夜初晗凝碧天》游戏产业年会 <br>
+                                                “2013年十大最受欢迎的单机游戏”
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2017</div>
+                                            <div class="year_cont">
+                                                6月： 《古剑奇谭》参展E3 <br><br>
+                                                10月：《古剑奇谭二》官方剧情小说三部曲正式发行 <br>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2018</div>
+                                            <div class="year_cont">
+                                                8月：《古剑奇谭网络版》不删档测试开启 <br><br>
+                                                11月：《古剑奇谭三：梦付千秋星垂野》正式发行
+
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2019</div>
+                                            <div class="year_cont">
+                                                1月：《古剑奇谭网络版》获2018年金翎奖“玩家最期待的网络游戏”奖项 <br>
+                                                《古剑奇谭三：梦付千秋星垂野》获游民星空玩趣奖 <br>
+                                                “2018年度国产游戏奖” <br><br>
+                                                7月：《古剑奇谭网络版》正式公测
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2020</div>
+                                            <div class="year_cont">
+                                                11月：《古剑奇谭》获国家版权局2020年 <br>
+                                                中国版权金奖“作品奖”
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2021</div>
+                                            <div class="year_cont">
+                                                8月：《古剑奇谭网络版 海外版》 <br>
+                                                正式上线
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2023</div>
+                                            <div class="year_cont">
+                                                4月：《心渊梦境》 <br>
+                                                正式发售
+                                            </div>
+                                        </div>
+
+                                        <div class="year_itm">
+                                            <div class="year_num">2024</div>
+                                            <div class="year_cont">
+                                                1月：《白荆回廊》 <br>
+                                                正式公测
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="pg2_next_btn db"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide page page3">
+                    <div class="pg3_swp">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a class="db jrgw_btn" href="https://www.gujiangame.com/" target="_blank" rel="noopener noreferrer">进入官网</a>
+                                <img src="./imgs/pg3_img_big1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                 <a class="db jrgw_btn" href="https://seed.wangyuan.com/" target="_blank" rel="noopener noreferrer">进入官网</a>
+                                <img src="./imgs/pg3_img_big2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                 <a class="db jrgw_btn" href="https://gjol.wangyuan.com/" target="_blank" rel="noopener noreferrer">进入官网</a>
+                                <img src="./imgs/pg3_img_big3.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./imgs/pg3_img_big4.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./imgs/pg3_img_big5.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./imgs/pg3_img_big6.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./imgs/pg3_img_big7.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pg3_swp2_box">
+                        <div class="pg3_swp2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./imgs/pg3_img_mn1.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./imgs/pg3_img_mn2.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./imgs/pg3_img_mn3.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./imgs/pg3_img_mn4.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./imgs/pg3_img_mn5.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./imgs/pg3_img_mn6.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./imgs/pg3_img_mn7.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next_pg3s2 db"></div>
+                        <div class="swiper-button-prev swiper-button-prev_pg3s2 db"></div>
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide page page4">
+                    <div class="db pg4_jrwm_btn">加入我们</div>
+                </div>
+                <div class="swiper-slide" style="height: 12rem;">
+                    <div class="footer_box">
+                        <div class="foot_tp">
+                            <div class="foot_itm">
+                                <div class="foot_hx_icon">商务合作</div>
+                                <div class="txt_row">
+                                    <span>古剑单机合作邮箱：</span>
+                                    <a href="javascript:;">hezuo@wangyuan.com</a>
+                                </div>
+                                <div class="txt_row">
+                                    <span>其他品牌合作邮箱：</span>
+                                    <a href="javascript:;">business@wangyuan.com</a>
+                                </div>
+                            </div>
+                            <div class="foot_itm">
+                                <div class="foot_hx_icon">项目合作</div>
+                                <div class="txt_row">
+                                    <span>动捕演员投递：</span>
+                                    <a href="javascript:;">yanyuan@wangyuan.com</a>
+                                </div>
+                                <div class="txt_row">
+                                    <span>项目研发合作：</span>
+                                    <a href="javascript:;">caigou@wangyuan.com</a>
+                                </div>
+                            </div>
+                            <div class="foot_itm">
+                                <div class="foot_hx_icon">同人申报</div>
+                                <div class="txt_row">
+                                    <span>网元旗下IP同人邮箱：</span>
+                                    <a href="javascript:;">zhuzuoquan@wangyuan.com</a>
+                                </div>
+                                <div class="txt_row">
+                                    <span>白荆回廊同人邮箱：</span>
+                                    <a href="javascript:;">seedtr@wangyuan.com</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="foot_bt">
+                            <div class="foot_icon"></div>
+                            <div class="tp_txt_box">
+                                <div class="tp_txt">营业执照：91310115667762134Q | 沪ICP备07509347号 | 沪公网安备31011502016562号</div>
+                                <div class="tp_txt">上海烛龙信息科技有限公司@版权所有</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="swr0_cm_bod on">
+                <div class="swiper-button-next swiper-button-next_pg0 db"></div>
+                <div class="swiper-pagination0"></div>
+                <div class="swiper-button-prev swiper-button-prev_pg0 db"></div>
+            </div>
+        </div>
+        <!-- 招聘页 -->
+        <div class="hire_page_box" style="display: none;">
+            <div class="hire_page">
+                <a class="db hire_jrwm_btn" href="https://www.zhipin.com/gongsi/030b759debf9163d0HR72tm8.html?ka=job-detail-company_custompage" target="_blank">加入我们</a>
+                <div class="zpy_tit"></div>
+                <div class="hire_cont pg4_swp">
+                    <div class="sub_tit_box">
+                        <div class="sub_tit">职位名称</div>
+                        <div class="sub_tit">所有地点</div>
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="p4_row on">
+                                <div class="row_itm">
+                                    <span>SD材质美术（场景方向）</span>
+                                    <!-- 热招icon -->
+                                    <div class="rz_icon"></div>
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>SD材质美术（角色方向）</span>
+                                    <!-- 热招icon -->
+                                    <div class="rz_icon"></div>
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>特效美术</span>
+                                    <!-- 热招icon -->
+                                    <div class="rz_icon"></div>
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>话剧演员•动作捕捉演员</span>
+                                    <!-- 热招icon -->
+                                    <div class="rz_icon"></div>
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>资深场景美术（植被、生态方向)</span>
+                                    <!-- 热招icon -->
+                                    <div class="rz_icon"></div>
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>绑定美术</span>
+                                    <!-- 热招icon -->
+                                    <div class="rz_icon"></div>
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>资深角色模型美术（美型角色方向）</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>资深角色模型美术（怪物方向）</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>动作美术</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p4_row on">
+                                <div class="row_itm">
+                                    <span>场景美术（雕刻/Hero物件方向)</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>SD材质美术（角色方向）</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                  
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>技术美术</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>技术美术（特效方向）</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>武术教练•动作捕捉演员</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>资深角色概念原画（美型人物、套装方向）</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>资深场景概念原画</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>游戏引擎程序</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>Gameplay程序</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p4_row on">
+                                <div class="row_itm">
+                                    <span>人文策划</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>关卡策划</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="p4_row">
+                                <div class="row_itm">
+                                    <span>音效师</span>
+                                    <!-- 热招icon -->
+                                    <!-- <div class="rz_icon"></div> -->
+                                </div>
+                                <div class="row_itm">
+                                    <span>上海•社会招聘</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="hire_zsq_btns">
+                    <div class="swiper-button-prev swiper-button-prev_pg4 db"></div>
+                    <div class="swiper-pagination_pg4"></div>
+                    <!-- <div class="zpy_zsq_icon"></div> -->
+                    <div class="swiper-button-next swiper-button-next_pg4 db"></div>
+                </div>
+            </div>
+            <div class="footer_box">
+                <div class="foot_tp">
+                    <div class="foot_itm">
+                         <div class="foot_hx_icon">商务合作</div>
+                         <div class="txt_row">
+                            <span>古剑单机合作邮箱：</span>
+                            <a href="javascript:;">hezuo@wangyuan.com</a>
+                         </div>
+                         <div class="txt_row">
+                            <span>其他品牌合作邮箱：</span>
+                            <a href="javascript:;">business@wangyuan.com</a>
+                         </div>
+                    </div>
+                    <div class="foot_itm">
+                         <div class="foot_hx_icon">项目合作</div>
+                         <div class="txt_row">
+                            <span>动捕演员投递：</span>
+                            <a href="javascript:;">yanyuan@wangyuan.com</a>
+                         </div>
+                         <div class="txt_row">
+                            <span>项目研发合作：</span>
+                            <a href="javascript:;">caigou@wangyuan.com</a>
+                         </div>
+                    </div>
+                    <div class="foot_itm">
+                         <div class="foot_hx_icon">同人申报</div>
+                         <div class="txt_row">
+                            <span>网元旗下IP同人邮箱：</span>
+                            <a href="javascript:;">zhuzuoquan@wangyuan.com</a>
+                         </div>
+                         <div class="txt_row">
+                            <span>白荆回廊同人邮箱：</span>
+                            <a href="javascript:;">seedtr@wangyuan.com</a>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="foot_bt">
+                    <div class="foot_icon"></div>
+                    <div class="tp_txt_box">
+                        <div class="tp_txt">营业执照：91310115667762134Q | 沪ICP备07509347号 | 沪公网安备31011502016562号</div>
+                        <div class="tp_txt">上海烛龙信息科技有限公司@版权所有</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 弹窗遮罩 -->
+    <div id="pop_mask" class="mask" style="display: none"></div>
+    <!-- 隐藏的视频元素和关闭按钮 -->
+    <div id="videoContainer" style="display:none;">
+        <video id="myVideo1" controls>
+            <!-- 注意：这里暂时不设置source标签，防止自动加载 -->
+        </video>
+        <div id="closeVideoBtn"></div>
+    </div>
+   
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script>
+
+        var mySwiper = new Swiper('.mySwiper0', {
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            mousewheel: true,
+            initialSlide: 0,
+            pagination: {
+                el: ".swiper-pagination0",
+                type: 'bullets',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next_pg0",
+                prevEl: ".swiper-button-prev_pg0",
+            },
+            on: {
+                slideChangeTransitionStart: function () {
+                    const currentIndex = this.realIndex;
+                    const $tabs = $('.tabs1_btn');
+                    // 更新 tab 高亮
+                    $tabs.removeClass('on').eq(currentIndex).addClass('on');
+                    // 控制 .swr0_cm_bod 的显示
+                    if (currentIndex < 1) {
+                        $('.swr0_cm_bod').addClass('on');
+                    } else {
+                        $('.swr0_cm_bod').removeClass('on');
+                    }
+                },
+            },
+        });
+        // ================================
+        // 点击 tab 跳转到对应 slide
+        // ================================
+        $(document).ready(function () {
+            $('.tabs1_btn').click(function () {
+                // 获取当前点击的 tab 是第几个（从 0 开始）
+                const index = $('.tabs1_btn').index(this);
+                // 使用 Swiper 的 slideTo 方法跳转
+                mySwiper.slideTo(index, 500); // 500ms 动画时间
+                $('.tabs1_btn').removeClass('on');
+                $(this).addClass('on');
+                if (index < 1) {
+                    $('.swr0_cm_bod').addClass('on');
+                } else {
+                    $('.swr0_cm_bod').removeClass('on');
+                }
+            });
+        });
+
+
+
+        $(document).ready(function () {
+            $('.pg2_tabs1_btn').click(function () {
+                // 获取当前点击的按钮在兄弟中的索引（从 0 开始）
+                const index = $('.pg2_tabs1_btn').index(this);
+                if (index) {
+                    $('.page2').addClass('on');
+                } else {
+                    $('.page2').removeClass('on');
+                }
+
+                // 移除所有按钮的 'on' 类和所有内容的 'active' 类
+                $('.pg2_tabs1_btn').removeClass('on');
+                $('.pg2_tab_cont').removeClass('active');
+
+                // 给当前点击的按钮添加 'on'
+                $(this).addClass('on');
+
+                // 给对应索引的内容块添加 'active'
+                $('.pg2_tab_cont').eq(index).addClass('active');
+            });
+        });
+
+
+        $(document).ready(function () {
+            const $items = $('.year_itm');
+            const $prevBtn = $('.pg2_prev_btn');
+            const $nextBtn = $('.pg2_next_btn');
+            let currentIndex = 0; // 当前选中的索引
+            // 默认选中第一个
+            selectItem(0);
+            // 点击年份项
+            $items.on('click', function () {
+                const index = $items.index(this);
+                selectItem(index);
+            });
+            // 点击上一个按钮
+            $prevBtn.on('click', function () {
+                if (currentIndex > 0) {
+                    selectItem(currentIndex - 1);
+                }
+            });
+            // 点击下一个按钮
+            $nextBtn.on('click', function () {
+                if (currentIndex < $items.length - 1) {
+                    selectItem(currentIndex + 1);
+                }
+            });
+            // 封装选中逻辑
+            function selectItem(index) {
+                if (index < 0 || index >= $items.length) return;
+                // 移除所有 on 类
+                $items.removeClass('on');
+                $prevBtn.removeClass('on');
+                $nextBtn.removeClass('on');
+                // 设置当前项
+                $items.eq(index).addClass('on');
+                currentIndex = index;
+                // 处理按钮状态
+                if (currentIndex === 0) {
+                    $prevBtn.addClass('on'); // 第一个时，上一个按钮加 on
+                }
+                if (currentIndex === $items.length - 1) {
+                    $nextBtn.addClass('on'); // 最后一个时，下一个按钮加 on
+                }
+            }
+        });
+
+        // pg3_swp2
+        var pg3_swp2 = new Swiper(".pg3_swp2", {
+            observer: false,
+            observeParents: true,
+            spaceBetween: 0,
+            slidesPerView: 5,
+            // centeredSlides: true,
+            // centeredSlidesBounds: true,
+            // freeMode: true,
+            watchSlidesProgress: true,
+            // slidesOffsetAfter: 20,
+        });
+
+        // pg3_swp
+        var pg3_swp = new Swiper('.pg3_swp', {
+            slidesPerView: 'auto',
+            mousewheel: false,
+            initialSlide: 0,
+            navigation: {
+                nextEl: ".swiper-button-next_pg3s2",
+                prevEl: ".swiper-button-prev_pg3s2",
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            thumbs: {
+                swiper: pg3_swp2,
+            },
+
+        });
+
+        // pg4_swp
+        var pg4_swp = new Swiper('.pg4_swp', {
+            slidesPerView: 'auto',
+            mousewheel: false,
+            initialSlide: 0,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+             pagination: {
+                el: ".swiper-pagination_pg4",
+                type: 'bullets',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next_pg4",
+                prevEl: ".swiper-button-prev_pg4",
+            },
+        });
+
+        $(document).ready(function () {
+            // 监听所有 .p4_row 的点击事件
+            $('.swiper-slide').on('click', '.p4_row', function (e) {
+                // 防止默认行为（比如如果 p4_row 内有链接）
+                e.preventDefault();
+
+                // 获取当前点击的 .p4_row 和其父级 .swiper-slide
+                var $currentRow = $(this);
+                var $parentSlide = $currentRow.closest('.swiper-slide');
+
+                // 在同一个 .swiper-slide 内移除所有 .p4_row 的 'on' 类
+                $parentSlide.find('.p4_row').removeClass('on');
+
+                // 给被点击的 .p4_row 添加 'on' 类
+                $currentRow.addClass('on');
+
+                // 跳转到指定外链（新标签页打开）
+                window.open('https://www.zhipin.com/gongsi/030b759debf9163d0HR72tm8.html?ka=job-detail-company_custompage', '_blank');
+            });
+        });
+
+        //  首页视频
+        $(document).ready(function () {
+            var video = $('#myVideo1')[0];
+
+            function showVideo3() {
+                video.src = "https://v.gbimg.cn/20250817/0fabe47b782fb2a2a707a933ae660ca9/gujian-3840-2160.mp4";
+                video.load();
+                $('#videoContainer').show();
+                video.currentTime = 0;
+                video.play().catch(e => console.log("播放失败:", e));
+            }
+
+            $(document).on('click', '#playVideoBtn', function () {
+                $('.mask').show();
+                showVideo3();
+            });
+
+            $(document).on('click', '#closeVideoBtn', function () {
+                var video = $('#myVideo1')[0];
+                $('#videoContainer').hide();
+                $('.mask').hide();
+                if (video && !video.paused) {
+                    video.pause();
+                }
+            });
+        });
+
+
+        // 招聘页和轮播页切换
+        $('.pg2_jrwm_btn, .pg4_jrwm_btn,.nav_jrwm_btn').on('click', function () {
+            $('.hire_page_box').show();
+            $('.swiper-wrapper0').hide();
+            pg4_swp.update();
+            $('.tabs1_btn').removeClass('on');
+            $('.hire_page_box').animate({ scrollTop: 0 },100); // 页面滚回顶部
+        });
+
+        $('.tabs1_btn').on('click', function () {
+            $('.hire_page_box').hide();
+            $('.swiper-wrapper0').show();
+            mySwiper.update();
+        });
+
+        /* 弹窗 */
+        function TGDialogS(popId) {
+            closeDialog();
+            $('#' + popId).show();
+            $(".mask").show();
+        }
+
+        /* 关闭所有弹窗 */
+        function closeDialog() {
+            destroyPlayer()
+            $('.dialog').hide();
+            $('.mask').hide()
+        }
+    </script>
+</body>
+
+</html>

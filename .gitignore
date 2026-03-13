@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+.Python
+
+# Temporary files
+*.tmp
+*.log
+.cache/
+
+# Optional: if you don't want to commit the reference folders
+(1)/
+(2)/

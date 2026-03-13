@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — LUMINIUM STUDIO</title>
+    <!-- Modern typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- WebGL Library for advanced effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- WebGL Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom interactive cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><img src="logo.png" alt="Luminium Studio Logo" class="brand-logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="studio.html" class="nav-item">Studio</a>
+            <div class="nav-item-group">
+                <a href="portfolio.html" class="nav-item active">Portfolio</a>
+                <span class="nav-sub-sep">|</span>
+                <button class="nav-sub-tab active" data-tab="credits-list">Credits</button>
+                <button class="nav-sub-tab" data-tab="audio-showcase">Music</button>
+                <button class="nav-sub-tab" data-tab="video-showcase">Video</button>
+            </div>
+            <a href="blog.html" class="nav-item">Blog</a>
+            <a href="#contact" class="nav-item contact-btn">Let's Talk</a>
+        </div>
+    </nav>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="nav-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="nav-toggle" class="mobile-nav-overlay"></label>
+    <div class="mobile-nav-drawer">
+        <a href="index.html" class="drawer-item">Home</a>
+        <a href="studio.html" class="drawer-item">Studio</a>
+        <a href="portfolio.html" class="drawer-item active">Portfolio</a>
+        <div class="drawer-divider"></div>
+        <span class="drawer-sub-label">Portfolio</span>
+        <button class="drawer-sub-item nav-sub-tab active" data-tab="credits-list">Credits</button>
+        <button class="drawer-sub-item nav-sub-tab" data-tab="audio-showcase">Music</button>
+        <button class="drawer-sub-item nav-sub-tab" data-tab="video-showcase">Video</button>
+        <div class="drawer-divider"></div>
+        <a href="blog.html" class="drawer-item">Blog</a>
+        <a href="#contact" class="drawer-item drawer-cta">Let's Talk</a>
+    </div>
+
+    <!-- Mobile Tab Bar (hidden on desktop) -->
+    <div class="mobile-tab-bar">
+        <button class="nav-sub-tab active" data-tab="credits-list">Credits</button>
+        <button class="nav-sub-tab" data-tab="audio-showcase">Music</button>
+        <button class="nav-sub-tab" data-tab="video-showcase">Video</button>
+    </div>
+
+    <!-- Main Content -->
+    <!-- Persistent Music Player — outside <main> so filter/overflow on main cannot break fixed positioning -->
+    <div class="audio-player glass-panel">
+        <!-- Left: Play/Pause/Transport -->
+        <div class="hx-controls-left">
+            <button id="btn-play" class="hx-play-toggle play-btn" style="margin: 0;">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="icon-play" xmlns="http://www.w3.org/2000/svg"><polygon points="7 5 19 12 7 19"></polygon></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" class="icon-pause" style="display:none;" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="5" width="3" height="14"></rect><rect x="14" y="5" width="3" height="14"></rect></svg>
+            </button>
+        </div>
+
+        <!-- Center: Title + Waveform/Progress -->
+        <div class="hx-center-display">
+            <div class="hx-track-header">
+                <h2 id="current-title" class="hx-track-title" style="margin-bottom: 0;">SELECT A TRACK</h2>
+            </div>
+
+            <div class="hx-waveform-area">
+                <span id="current-time" class="hx-time">0:00</span>
+                <div id="waveform-container" class="hx-waveform"></div>
+                <input type="range" id="mobile-progress" class="hx-mobile-progress" min="0" max="1" step="0.001" value="0">
+                <span id="total-time" class="hx-time">0:00</span>
+            </div>
+        </div>
+
+        <div class="hx-controls-right">
+            <div class="hx-volume-wrapper">
+                <button class="hx-volume-btn" aria-label="Volume">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.85 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z"/></svg>
+                </button>
+                <div class="hx-volume-slider-popup">
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="audio-element"></audio>
+
+    <main data-scroll-container>
+
+        <!-- Module 1: Music Playlist -->
+        <section id="audio-showcase" class="music-section tab-section" data-scroll-section>
+            <div class="playlist-container">
+                <ul id="playlist">
+                    <!-- Populated dynamically from assets/prortfolio/doc/playlist.json -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Module 2: Video Player -->
+        <section id="video-showcase" class="video-section tab-section" data-scroll-section>
+            <h2 class="section-title" style="margin-left: max(4rem, calc((100vw - 1400px) / 2));">Video Reel</h2>
+            <div class="video-grid">
+                <a href="https://space.bilibili.com/" target="_blank" class="video-card glass-panel" data-tilt>
+                    <div class="video-thumbnail">
+                        <div class="placeholder-visual visual-1"></div>
+                        <div class="play-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5V19L19 12L8 5Z" fill="currentColor"/></svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Vanguard Legacy Trailer</h3>
+                        <p>Sound Design & Foley</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" class="video-card glass-panel" data-tilt>
+                    <div class="video-thumbnail">
+                        <div class="placeholder-visual visual-2"></div>
+                        <div class="play-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5V19L19 12L8 5Z" fill="currentColor"/></svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Girls' Frontline OP</h3>
+                        <p>Soundtrack</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Module 3: Credits List -->
+        <section id="credits-list" class="credits-section tab-section active" data-scroll-section>
+            <h2 class="section-title credits-section-title">Recent Works</h2>
+            <div class="credits-poster-grid" id="credits-poster-grid">
+                <!-- Populated dynamically from assets/prortfolio/doc/credits.json -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" data-scroll-section>
+            <div class="footer-content">
+                <div class="footer-cta">
+                    <h2>LIGHT &<br><span class="accent-text">SOUND</span></h2>
+                    <a href="mailto:hello@luminium.studio" class="email-link">HELLO@LUMINIUM.STUDIO</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 LUMINIUM STUDIO. ALL RIGHTS RESERVED.</p>
+                    <div class="socials">
+                        <a href="#">IG</a>
+                        <a href="#">X</a>
+                        <a href="#">AWWWARDS</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
+    <script src="main.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+
+</html>

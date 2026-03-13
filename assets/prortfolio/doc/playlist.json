@@ -1,0 +1,96 @@
+{
+  "tracks": [
+    { "type": "section", "label": "PROJECT 42" },
+    {
+      "index": 1,
+      "title": "PJ42 +10event BG Casual pre",
+      "src": "assets/prortfolio/music/PJ42_+10event_BG_Casual_pre.wav",
+      "duration_sec": 109.09,
+      "duration": "1:49"
+    },
+    {
+      "index": 2,
+      "title": "PJ42 +10event BG Deduction pre",
+      "src": "assets/prortfolio/music/PJ42_+10event_BG_Deduction_pre.wav",
+      "duration_sec": 116.35,
+      "duration": "1:56"
+    },
+    {
+      "index": 3,
+      "title": "PJ42 +7event Boss pre",
+      "src": "assets/prortfolio/music/PJ42_+7event_Boss_pre.wav",
+      "duration_sec": 135.3,
+      "duration": "2:15"
+    },
+    {
+      "index": 4,
+      "title": "PJ42 +7event Story pre",
+      "src": "assets/prortfolio/music/PJ42_+7event_Story_pre.wav",
+      "duration_sec": 120.41,
+      "duration": "2:00"
+    },
+    {
+      "index": 5,
+      "title": "PJ42 +7event Story pre offvox",
+      "src": "assets/prortfolio/music/PJ42_+7event_Story_pre_offvox.wav",
+      "duration_sec": 120.41,
+      "duration": "2:00"
+    },
+    {
+      "index": 6,
+      "title": "PJ42 +7event Story pre ver2",
+      "src": "assets/prortfolio/music/PJ42_+7event_Story_pre_ver2.wav",
+      "duration_sec": 120.41,
+      "duration": "2:00"
+    },
+    {
+      "index": 7,
+      "title": "PJ42 +7event Story pre ver2 voxonly",
+      "src": "assets/prortfolio/music/PJ42_+7event_Story_pre_ver2_voxonly.wav",
+      "duration_sec": 120.41,
+      "duration": "2:00"
+    },
+    {
+      "index": 8,
+      "title": "PJ42 +7event Story pre voxonly",
+      "src": "assets/prortfolio/music/PJ42_+7event_Story_pre_voxonly.wav",
+      "duration_sec": 120.41,
+      "duration": "2:00"
+    },
+    {
+      "index": 9,
+      "title": "PJ42 +8event Theme full pre",
+      "src": "assets/prortfolio/music/PJ42_+8event_Theme_full_pre.wav",
+      "duration_sec": 303.0,
+      "duration": "5:03"
+    },
+    {
+      "index": 10,
+      "title": "PJ42 +9event BG pre",
+      "src": "assets/prortfolio/music/PJ42_+9event_BG_pre.wav",
+      "duration_sec": 100.8,
+      "duration": "1:40"
+    },
+    {
+      "index": 11,
+      "title": "PJ42 +9event Battle pre",
+      "src": "assets/prortfolio/music/PJ42_+9event_Battle_pre.wav",
+      "duration_sec": 97.41,
+      "duration": "1:37"
+    },
+    {
+      "index": 12,
+      "title": "PJ42 +9event Story pre",
+      "src": "assets/prortfolio/music/PJ42_+9event_Story_pre.wav",
+      "duration_sec": 104.44,
+      "duration": "1:44"
+    },
+    {
+      "index": 13,
+      "title": "PJ42 +9event lobby pre",
+      "src": "assets/prortfolio/music/PJ42_+9event_lobby_pre.wav",
+      "duration_sec": 95.24,
+      "duration": "1:35"
+    }
+  ]
+}
