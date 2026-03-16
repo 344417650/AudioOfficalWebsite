@@ -10,3 +10,9 @@ Thumbs.db
 # Editor
 .vscode/
 *.swp
+
+# Large files
+*.zip
+*.exe
+*.dmg
+*.pkg
