@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "WebFetch(domain:hexanyaudio.com)",
+      "Bash(curl:*)",
+      "WebSearch",
+      "WebFetch(domain:www.prydwen.gg)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:ak.hypergryph.com)",
+      "WebFetch(domain:azurlane.yo-star.com)",
+      "WebFetch(domain:store.steampowered.com)",
+      "WebFetch(domain:www.taptap.cn)"
+    ]
+  }
+}

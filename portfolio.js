@@ -1,0 +1,425 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Music Player Element References ---
+    const playBtn = document.getElementById('btn-play');
+
+    const iconPlay = playBtn.querySelector('.icon-play');
+    const iconPause = playBtn.querySelector('.icon-pause');
+
+    const currentTimeEl = document.getElementById('current-time');
+    const totalTimeEl = document.getElementById('total-time');
+
+    const titleEl = document.getElementById('current-title');
+
+    let playlistItems = [];
+
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    let pendingPlay = false;
+
+    // Format time in seconds to mm:ss
+    function formatTime(seconds) {
+        if (isNaN(seconds) || Math.floor(seconds) < 0) return "0:00";
+        const m = Math.floor(seconds / 60);
+        const s = Math.floor(seconds % 60);
+        return `${m}:${s.toString().padStart(2, '0')}`;
+    }
+
+    // Initialize WaveSurfer
+    const wavesurfer = WaveSurfer.create({
+        container: '#waveform-container',
+        waveColor: 'rgba(255, 255, 255, 0.35)',
+        progressColor: '#ff4a1a',
+        cursorColor: '#ffffff',
+        cursorWidth: 1,
+        height: window.matchMedia('(max-width: 768px)').matches ? 56 : 108,
+        normalize: true,
+        backend: 'WebAudio'
+    });
+
+    // Initialize Player
+    function loadTrack(index) {
+        playlistItems.forEach(item => item.classList.remove('active'));
+
+        if(playlistItems.length === 0) return;
+
+        const item = playlistItems[index];
+        item.classList.add('active');
+
+        const src = item.getAttribute('data-src');
+        const title = item.getAttribute('data-title');
+
+        titleEl.textContent = title;
+
+        wavesurfer.load(src);
+    }
+
+    function togglePlay() {
+        wavesurfer.playPause();
+    }
+
+    function updatePlayState() {
+        if (isPlaying) {
+            iconPlay.style.display = 'none';
+            iconPause.style.display = 'block';
+        } else {
+            iconPlay.style.display = 'block';
+            iconPause.style.display = 'none';
+        }
+    }
+
+    function nextTrack() {
+        currentTrackIndex = (currentTrackIndex + 1) % playlistItems.length;
+        loadTrack(currentTrackIndex);
+    }
+
+    function prevTrack() {
+        currentTrackIndex = (currentTrackIndex - 1 + playlistItems.length) % playlistItems.length;
+        loadTrack(currentTrackIndex);
+    }
+
+    // Mobile progress bar
+    const mobileProgress = document.getElementById('mobile-progress');
+
+    function updateMobileProgress(currentTime) {
+        const duration = wavesurfer.getDuration();
+        if (mobileProgress && duration > 0) {
+            mobileProgress.value = currentTime / duration;
+        }
+    }
+
+    if (mobileProgress) {
+        mobileProgress.addEventListener('input', () => {
+            wavesurfer.seekTo(parseFloat(mobileProgress.value));
+        });
+    }
+
+    // WaveSurfer Events
+    wavesurfer.on('play', () => {
+        isPlaying = true;
+        updatePlayState();
+    });
+
+    wavesurfer.on('pause', () => {
+        isPlaying = false;
+        updatePlayState();
+    });
+
+    wavesurfer.on('audioprocess', (currentTime) => {
+        currentTimeEl.textContent = formatTime(currentTime);
+        updateMobileProgress(currentTime);
+    });
+
+    wavesurfer.on('seeking', (currentTime) => {
+        currentTimeEl.textContent = formatTime(currentTime);
+        updateMobileProgress(currentTime);
+    });
+
+    wavesurfer.on('ready', () => {
+        const duration = wavesurfer.getDuration();
+        totalTimeEl.textContent = formatTime(duration);
+        if (mobileProgress) mobileProgress.value = 0;
+
+        wavesurfer.seekTo(0);
+        if (pendingPlay) {
+            pendingPlay = false;
+            wavesurfer.play();
+        }
+    });
+
+    wavesurfer.on('finish', () => {
+        currentTrackIndex = (currentTrackIndex + 1) % playlistItems.length;
+        pendingPlay = true;
+        loadTrack(currentTrackIndex);
+    });
+
+    // Control Buttons
+    if(playBtn) playBtn.addEventListener('click', togglePlay);
+
+    // Volume Slider
+    const volumeSlider = document.getElementById('volume-slider');
+    if(volumeSlider) {
+        wavesurfer.setVolume(parseFloat(volumeSlider.value));
+        volumeSlider.addEventListener('input', (e) => {
+            wavesurfer.setVolume(parseFloat(e.target.value));
+        });
+    }
+
+    // --- Render playlist from JSON and initialize ---
+    function renderPlaylist(items) {
+        const ul = document.getElementById('playlist');
+        let firstTrack = true;
+        ul.innerHTML = items.map(item => {
+            if (item.type === 'section') {
+                return `<li class="playlist-section-header"><span>- ${item.label} -</span></li>`;
+            }
+            const activeClass = firstTrack ? ' active' : '';
+            firstTrack = false;
+            return `<li class="playlist-item${activeClass}" data-src="${item.src}" data-title="${item.title}">
+                <div class="track-name-wrapper"><div class="track-name">${item.title}</div></div>
+                <div class="track-duration">${item.duration}</div>
+            </li>`;
+        }).join('');
+    }
+
+    function initPlaylist() {
+        playlistItems = Array.from(document.querySelectorAll('.playlist-item'));
+
+        // Playlist Clicks
+        playlistItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                if(currentTrackIndex === index) {
+                    togglePlay();
+                } else {
+                    pendingPlay = isPlaying;
+                    currentTrackIndex = index;
+                    loadTrack(index);
+                }
+            });
+        });
+
+        // Marquee effect for overflowing track names
+        const marqueeObserver = new ResizeObserver(entries => {
+            entries.forEach(entry => {
+                const wrapper = entry.target;
+                const trackName = wrapper.querySelector('.track-name');
+                if (!trackName) return;
+
+                if (trackName.scrollWidth > wrapper.clientWidth + 2) {
+                    trackName.classList.add('scroll-pingpong');
+                    const scrollDist = trackName.scrollWidth - wrapper.clientWidth + 20;
+                    trackName.style.setProperty('--scroll-dist', `-${scrollDist}px`);
+                    wrapper.style.maskImage = 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)';
+                    wrapper.style.webkitMaskImage = 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)';
+                } else {
+                    trackName.classList.remove('scroll-pingpong');
+                    trackName.style.removeProperty('--scroll-dist');
+                    wrapper.style.maskImage = 'none';
+                    wrapper.style.webkitMaskImage = 'none';
+                }
+            });
+        });
+
+        document.querySelectorAll('.track-name-wrapper').forEach(wrapper => {
+            marqueeObserver.observe(wrapper);
+        });
+
+        // Load first track
+        if (playlistItems.length > 0) {
+            loadTrack(0);
+        }
+    }
+
+    // --- Render Credits Grid from JSON ---
+    let creditsItems = [];
+
+    function renderCredits(items, lang) {
+        if (items) creditsItems = items;
+        const grid = document.getElementById('credits-poster-grid');
+        if (!grid) return;
+        const isZh = (lang || localStorage.getItem('luminium-lang') || 'en') === 'zh';
+        grid.innerHTML = creditsItems.map(item => {
+            const title   = isZh ? item.title   : (item.title_en   || item.title);
+            const company = isZh ? item.company  : (item.company_en || item.company);
+            const role    = isZh ? item.role     : (item.role_en    || item.role);
+            const companyHtml = company ? `<span class="ct-company">${company}</span>` : '';
+            return `<div class="credit-poster">
+                <img src="assets/prortfolio/credit/${item.file}" alt="${title}">
+                <div class="credit-tooltip">
+                    <span class="ct-title">${title}</span>
+                    ${companyHtml}
+                    <span class="ct-platform">${item.platform}</span>
+                    <span class="ct-role">${role}</span>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    document.addEventListener('langchange', function (e) {
+        renderCredits(null, e.detail.lang);
+    });
+
+    // --- Render Video Grid from JSON ---
+    function renderVideos(items) {
+        const grid = document.getElementById('video-grid');
+        if (!grid) return;
+        const playSvg = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5V19L19 12L8 5Z" fill="currentColor"/></svg>`;
+        grid.innerHTML = items.map(item => {
+            if (item.type === 'modal') {
+                const htmlAttr = item.html ? ` data-video-html="${item.html.replace(/"/g, '&quot;')}"` : '';
+                return `<div class="video-card glass-panel" data-tilt data-video-modal="${item.src}"${htmlAttr}>
+                    <div class="video-thumbnail">
+                        <div class="placeholder-visual ${item.visual}"></div>
+                        <div class="play-overlay">${playSvg}</div>
+                    </div>
+                    <div class="video-info"><h3>${item.title}</h3><p>${item.role}</p></div>
+                </div>`;
+            } else {
+                return `<a href="${item.src}" target="_blank" class="video-card glass-panel" data-tilt>
+                    <div class="video-thumbnail">
+                        <div class="placeholder-visual ${item.visual}"></div>
+                        <div class="play-overlay">${playSvg}</div>
+                    </div>
+                    <div class="video-info"><h3>${item.title}</h3><p>${item.role}</p></div>
+                </a>`;
+            }
+        }).join('');
+
+        // Re-bind modal triggers for dynamically rendered cards
+        grid.querySelectorAll('[data-video-modal]').forEach(card => {
+            card.addEventListener('click', () => {
+                openVideoModal(card.getAttribute('data-video-modal'), card.getAttribute('data-video-html'));
+            });
+        });
+    }
+
+    function loadData(globalVar, fetchUrl, onData, onError) {
+        if (window[globalVar]) {
+            onData(window[globalVar]);
+        } else {
+            fetch(fetchUrl)
+                .then(r => r.json())
+                .then(onData)
+                .catch(onError);
+        }
+    }
+
+    loadData('videosData', 'assets/prortfolio/doc/videos.json',
+        data => renderVideos(data.videos),
+        err => console.error('Failed to load videos:', err));
+
+    loadData('creditsData', 'assets/prortfolio/doc/credits.json',
+        data => renderCredits(data.credits),
+        err => console.error('Failed to load credits:', err));
+
+    loadData('playlistData', 'assets/prortfolio/doc/playlist.json',
+        data => { renderPlaylist(data.tracks); initPlaylist(); },
+        err => console.error('Failed to load playlist:', err));
+
+    // --- Volume Click-Toggle ---
+    const volWrapper = document.querySelector('.hx-volume-wrapper');
+    const volBtn = document.querySelector('.hx-volume-btn');
+    if (volBtn && volWrapper) {
+        volBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            volWrapper.classList.toggle('vol-open');
+        });
+        document.addEventListener('click', (e) => {
+            if (!volWrapper.contains(e.target)) {
+                volWrapper.classList.remove('vol-open');
+            }
+        });
+    }
+
+    // --- Sticky Player Shrink Detection ---
+    const playerContainer = document.querySelector('.audio-player');
+    if (playerContainer) {
+        // Calculate threshold while player is still visible
+        const threshold = playerContainer.offsetHeight;
+
+        function checkSticky() {
+            if (window.scrollY > threshold) {
+                playerContainer.classList.add('is-stuck');
+            } else {
+                playerContainer.classList.remove('is-stuck');
+            }
+            requestAnimationFrame(checkSticky);
+        }
+        requestAnimationFrame(checkSticky);
+
+        // Hide player on init if default tab is not music
+        const initialTab = document.querySelector('.nav-sub-tab.active');
+        if (!initialTab || initialTab.getAttribute('data-tab') !== 'audio-showcase') {
+            playerContainer.classList.add('hidden');
+        }
+    }
+
+    // --- Tab Navigation ---
+    const tabBtns = document.querySelectorAll('.nav-sub-tab');
+    const tabSections = document.querySelectorAll('.tab-section');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabSections.forEach(s => s.classList.remove('active'));
+
+            btn.classList.add('active');
+            const targetId = btn.getAttribute('data-tab');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            if (targetId === 'audio-showcase') {
+                playerContainer.classList.remove('hidden');
+            } else {
+                if (isPlaying) togglePlay();
+                playerContainer.classList.add('hidden');
+            }
+
+            // Scroll to top on tab switch
+            window.scrollTo({ top: 0, behavior: 'instant' });
+
+            setTimeout(() => {
+                if (window.locomotive) {
+                    window.locomotive.update();
+                } else if (window.scroll) {
+                    window.scroll.update();
+                }
+            }, 550);
+        });
+    });
+
+    // --- Video Modal ---
+    const videoModal = document.getElementById('video-modal');
+    const videoIframe = document.getElementById('video-modal-iframe');
+    const videoModalClose = document.querySelector('.video-modal-close');
+
+    const videoModalBox = document.querySelector('.video-modal-box');
+
+    function openVideoModal(src, html) {
+        if (html) {
+            videoIframe.style.display = 'none';
+            let injected = videoModalBox.querySelector('.video-modal-injected');
+            if (!injected) {
+                injected = document.createElement('div');
+                injected.className = 'video-modal-injected';
+                videoModalBox.appendChild(injected);
+            }
+            injected.innerHTML = html;
+            // Apply full-size styles and fix permissions on any iframe inside the injected HTML
+            const inner = injected.querySelector('iframe');
+            if (inner) {
+                inner.style.cssText = 'width:100%;height:100%;border:none;';
+                inner.removeAttribute('scrolling');
+                // Fix protocol-relative URLs (// → https://)
+                const isrc = inner.getAttribute('src') || '';
+                if (isrc.startsWith('//')) inner.setAttribute('src', 'https:' + isrc);
+                // Grant autoplay / fullscreen permissions required by Bilibili
+                inner.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; web-share');
+                inner.setAttribute('allowfullscreen', 'true');
+            }
+        } else {
+            videoIframe.style.display = '';
+            videoIframe.src = src;
+        }
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+        videoModal.classList.remove('active');
+        videoIframe.src = '';
+        videoIframe.style.display = '';
+        const injected = videoModalBox.querySelector('.video-modal-injected');
+        if (injected) injected.innerHTML = '';
+        document.body.style.overflow = '';
+    }
+
+    if (videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) closeVideoModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeVideoModal();
+    });
+});

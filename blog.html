@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — LUMINIUM STUDIO</title>
+    <!-- Modern typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- WebGL Library for advanced effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- WebGL Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom interactive cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><img src="logo.png" alt="Luminium Studio Logo" class="brand-logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item" data-i18n="nav.home">Home</a>
+            <a href="studio.html" class="nav-item" data-i18n="nav.studio">Studio</a>
+            <a href="portfolio.html" class="nav-item" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
+            <a href="#contact" class="nav-item contact-btn" data-i18n="nav.contact">Let's Talk</a>
+            <button class="lang-toggle-btn" aria-label="Switch language">EN</button>
+        </div>
+    </nav>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="nav-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="nav-toggle" class="mobile-nav-overlay"></label>
+    <div class="mobile-nav-drawer">
+        <a href="index.html" class="drawer-item" data-i18n="nav.home">Home</a>
+        <a href="studio.html" class="drawer-item" data-i18n="nav.studio">Studio</a>
+        <a href="portfolio.html" class="drawer-item" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="blog.html" class="drawer-item active" data-i18n="nav.blog">Blog</a>
+        <a href="#contact" class="drawer-item drawer-cta" data-i18n="nav.contact">Let's Talk</a>
+        <button class="lang-toggle-btn drawer-lang-btn" aria-label="Switch language">EN</button>
+    </div>
+
+    <!-- Main Content -->
+    <main data-scroll-container>
+
+        <!-- Blog Coming Soon Section -->
+        <section class="blog-section" data-scroll-section>
+            <div class="blog-header">
+                <h1 class="hero-title">
+                    <span class="line"><span class="reveal-text" data-i18n="blog.title.1">KNOWLEDGE</span></span>
+                    <span class="line"><span class="reveal-text accent-text" data-i18n="blog.title.2">BASE</span></span>
+                </h1>
+                <p class="hero-subtitle fade-in" data-i18n="blog.subtitle">Insights, tutorials, and behind the scenes from the Luminium Audio
+                    Team.</p>
+                <div class="coming-soon-badge fade-in" data-i18n="blog.soon">Coming Soon</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" data-scroll-section>
+            <div class="footer-content">
+                <div class="footer-bottom">
+                    <p data-i18n="footer.copy">&copy; 2026 LUMINIUM STUDIO. ALL RIGHTS RESERVED.</p>
+                    <div class="socials">
+                        <a href="#">IG</a>
+                        <a href="#">X</a>
+                        <a href="#">AWWWARDS</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="i18n.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

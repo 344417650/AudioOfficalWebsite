@@ -1,0 +1,19 @@
+window.videosData = {
+  "videos": [
+    {
+      "title": "Fellow Moon Sound Trailer",
+      "role": "Sound Design",
+      "visual": "visual-1",
+      "type": "modal",
+      "src": "https://player.bilibili.com/player.html?bvid=BV1tPwazoENm&autoplay=1",
+      "html": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116229767433743&bvid=BV1tPwazoENm&cid=36704486866&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>"
+    },
+    {
+      "title": "xxx",
+      "role": "Soundtrack",
+      "visual": "visual-2",
+      "type": "modal",
+      "src": "https://player.bilibili.com/player.html?bvid=BV1tPwazoENm&autoplay=2"
+    }
+  ]
+};
