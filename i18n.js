@@ -16,7 +16,7 @@
             // Founders section
             'section.founders': 'The Founders',
             'gk.title': 'Music Director<br>Lead Composer',
-            'gk.desc': 'Former Audio Director at Sunborn Network and Zhenyouqu Network; former Audio Director at Vanguard Sound.',
+            'gk.desc': 'Former Audio Director at Sunborn Network and Sofunny Network; former Audio Director at Vanguard Sound.',
             'gk.skill.1': 'Music Production',
             'gk.skill.2': 'Audio Mixing',
             'gk.skill.3': 'Mastering',
@@ -24,7 +24,7 @@
             'gk.works': '<strong>Selected Works:</strong> Audio Director on <em>Nano Core</em> and <em>Girls\' Frontline</em>; Lead Composer on <em>Boundary</em>; contributed to <em>Azur Lane</em>, <em>Punishing: Gray Raven</em>, and more.',
             'gk.extra': 'Business-level English and Japanese; experienced in overseas resource coordination and live performance direction.',
             'breakless.title': 'Sound Director<br>Lead Sound Designer / Audio Programmer',
-            'breakless.desc': 'Former Audio Director at HyperGryph and Buminkeji; former Sound Designer at Vanguard Sound.',
+            'breakless.desc': 'Former Audio Director at HyperGryph and BoomingTech; former Sound Designer at Vanguard Sound.',
             'breakless.skill.1': 'Sound Design',
             'breakless.skill.2': 'System Design',
             'breakless.skill.3': 'Audio Integration',
