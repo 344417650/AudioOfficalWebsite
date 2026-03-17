@@ -56,7 +56,7 @@ window.creditsData = {
       "title_en": "Arknights: Endfield",
       "company": "鹰角网络",
       "company_en": "HyperGryph",
-      "platform": "PC / Console",
+      "platform": "PC / Mobile",
       "role": "合作音效",
       "role_en": "Sound Design"
     },
