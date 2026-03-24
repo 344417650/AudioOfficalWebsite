@@ -16,3 +16,6 @@ Thumbs.db
 *.exe
 *.dmg
 *.pkg
+
+# Secrets
+.github-token

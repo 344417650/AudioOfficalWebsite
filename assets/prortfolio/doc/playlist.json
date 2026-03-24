@@ -58,6 +58,51 @@
       "duration": "0:55"
     },
     {
+      "title": "23_Azl_Oct_BGM1_pre",
+      "src": "assets/prortfolio/music/传统管弦/23_Azl_Oct_BGM1_pre.mp3",
+      "duration": "2:01"
+    },
+    {
+      "title": "AE_240320_pre_triplet_BPM184",
+      "src": "assets/prortfolio/music/传统管弦/AE_240320_pre_triplet_BPM184.mp3",
+      "duration": "2:09"
+    },
+    {
+      "title": "AzL_Vampire_PV_pre",
+      "src": "assets/prortfolio/music/传统管弦/AzL_Vampire_PV_pre.mp3",
+      "duration": "2:25"
+    },
+    {
+      "title": "GATE_Ambience_Alice_Theme_preV2",
+      "src": "assets/prortfolio/music/传统管弦/GATE_Ambience_Alice_Theme_preV2.mp3",
+      "duration": "2:06"
+    },
+    {
+      "title": "GATE_Battle_Orch_pre",
+      "src": "assets/prortfolio/music/传统管弦/GATE_Battle_Orch_pre.mp3",
+      "duration": "3:29"
+    },
+    {
+      "title": "July_BGM2_pre",
+      "src": "assets/prortfolio/music/传统管弦/July_BGM2_pre.mp3",
+      "duration": "2:03"
+    },
+    {
+      "title": "Ryza_Colab_BGM1_pre",
+      "src": "assets/prortfolio/music/传统管弦/Ryza_Colab_BGM1_pre.mp3",
+      "duration": "2:07"
+    },
+    {
+      "title": "Ryza_Colab_BGM2_pre",
+      "src": "assets/prortfolio/music/传统管弦/Ryza_Colab_BGM2_pre.mp3",
+      "duration": "2:04"
+    },
+    {
+      "title": "Ryza_Colab_PV_pre",
+      "src": "assets/prortfolio/music/传统管弦/Ryza_Colab_PV_pre.mp3",
+      "duration": "1:37"
+    },
+    {
       "type": "section",
       "label": "国风电子"
     },
@@ -79,6 +124,26 @@
     {
       "type": "section",
       "label": "日系电子"
+    },
+    {
+      "title": "PJ42_+10event_Boss_preV3",
+      "src": "assets/prortfolio/music/日系电子/PJ42_+10event_Boss_preV3.mp3",
+      "duration": "2:03"
+    },
+    {
+      "title": "PJ42_+7event_Btlchess_Battle_preV2",
+      "src": "assets/prortfolio/music/日系电子/PJ42_+7event_Btlchess_Battle_preV2.mp3",
+      "duration": "2:33"
+    },
+    {
+      "title": "PJ42_Common_Boss_EX1_preV2_BPM144",
+      "src": "assets/prortfolio/music/日系电子/PJ42_Common_Boss_EX1_preV2_BPM144.mp3",
+      "duration": "2:14"
+    },
+    {
+      "title": "PJ42_Common_Combat_EX3_pre",
+      "src": "assets/prortfolio/music/日系电子/PJ42_Common_Combat_EX3_pre.mp3",
+      "duration": "1:51"
     },
     {
       "title": "PJ42_UI_Homepage_Minor_Master",
@@ -175,6 +240,40 @@
       "title": "H73_Snowfield_pre",
       "src": "assets/prortfolio/music/预告片管弦/H73_Snowfield_pre.mp3",
       "duration": "1:53"
+    },
+    {
+      "type": "section",
+      "label": "其他"
+    },
+    {
+      "title": "PJ42_+1event_Lobby_pre",
+      "src": "assets/prortfolio/music/其他/PJ42_+1event_Lobby_pre.mp3",
+      "duration": "1:46"
+    },
+    {
+      "title": "PJ42_+6event_PV_pre",
+      "src": "assets/prortfolio/music/其他/PJ42_+6event_PV_pre.mp3",
+      "duration": "1:35"
+    },
+    {
+      "title": "PJ42_+9event_lobby_pre",
+      "src": "assets/prortfolio/music/其他/PJ42_+9event_lobby_pre.mp3",
+      "duration": "1:35"
+    },
+    {
+      "title": "PJ42_+13event_Boss_preV2",
+      "src": "assets/prortfolio/music/其他/PJ42_+13event_Boss_preV2.mp3",
+      "duration": "2:00"
+    },
+    {
+      "title": "PJ42_Roguelike_Boss_Master",
+      "src": "assets/prortfolio/music/其他/PJ42_Roguelike_Boss_Master.mp3",
+      "duration": "2:05"
+    },
+    {
+      "title": "PJ_Combat_TraiN_1-5",
+      "src": "assets/prortfolio/music/其他/PJ_Combat_TraiN_1-5.mp3",
+      "duration": "7:55"
     }
   ]
 }
