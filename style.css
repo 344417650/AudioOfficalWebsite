@@ -1196,66 +1196,30 @@ main>section:first-child:not(.hero) {
 
 .track-duration { color: var(--text-primary); font-family: monospace; font-size: 0.78rem; padding-left: 1.5rem; }
 
-/* Video Reel */
-.video-section { padding: 6rem 4rem 8rem 4rem; z-index: 2; position: relative; }
-.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
-.video-card { text-decoration: none; display: block; border-color: transparent; }
-.video-card:hover { border-color: var(--accent); }
-.video-thumbnail { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 1.5rem; background: #111; }
-.video-thumbnail .placeholder-visual { width: 100%; height: 100%; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-.play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
-.play-overlay svg { width: 64px; height: 64px; color: #fff; transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter: drop-shadow(0 0 10px rgba(255,60,0,0.5)); }
-.video-card:hover .placeholder-visual { transform: scale(1.05); }
-.video-card:hover .play-overlay { opacity: 1; }
-.video-card:hover .play-overlay svg { transform: scale(1); color: var(--accent); }
-.video-info h3 { font-family: var(--font-heading); color: var(--text-primary); font-size: 1.4rem; margin-bottom: 0.5rem; }
-.video-info p { color: var(--text-secondary); font-size: 0.9rem; }
-.video-card[data-video-modal] { cursor: pointer; }
+/* Video List */
+.video-section { padding-top: 8rem; z-index: 2; position: relative; }
+.video-list-container { margin-top: 2rem; max-width: 1400px; width: 90%; margin-inline: auto; border-top: 1px solid rgba(255,255,255,0.05); }
+.video-list { list-style: none; padding: 0; margin: 0; }
+.video-list-item { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.55fr) auto; align-items: center; gap: clamp(1rem, 2cqi, 2rem); padding: 0.6rem 6.75rem 0.6rem 5.3rem; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.3s; cursor: pointer; }
+.video-list-item:hover { background: rgba(255,255,255,0.05); }
+.video-list-section-header { padding: 1.4rem 6.75rem 0.5rem 5.3rem; list-style: none; }
+.video-list-section-header span { font-family: var(--font-body); font-size: 0.78rem; font-weight: 400; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.18em; }
+.vl-title { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.03em; color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-left: 1.2rem; }
+.vl-game { font-size: 0.72rem; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vl-role { font-size: 0.72rem; color: var(--text-secondary); white-space: nowrap; }
 
-/* Video Modal */
-.video-modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-.video-modal-overlay.active { display: flex; }
-.video-modal-box {
-    position: relative;
-    width: min(90vw, 960px);
-    aspect-ratio: 16/9;
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 60px rgba(0,0,0,0.9);
-}
-.video-modal-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-.video-modal-injected { position: absolute; inset: 0; }
-.video-modal-injected iframe { width: 100%; height: 100%; border: none; }
-.video-modal-close {
-    position: absolute;
-    top: -2.2rem;
-    right: 0;
-    background: transparent;
-    border: none;
-    color: rgba(255,255,255,0.7);
-    font-size: 2rem;
-    line-height: 1;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.2s;
-    z-index: 10;
-}
-.video-modal-close:hover { color: #fff; }
+/* Video Jump Modal */
+.vj-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.vj-overlay.active { opacity: 1; pointer-events: all; }
+.vj-box { background: #111; border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem 3rem; max-width: 400px; width: 88%; position: relative; }
+.vj-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--text-secondary); font-size: 1.4rem; cursor: pointer; line-height: 1; transition: color 0.2s; }
+.vj-close:hover { color: var(--text-primary); }
+.vj-label { font-family: var(--font-body); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.vj-title { font-family: var(--font-body); font-size: 0.88rem; color: var(--text-primary); letter-spacing: 0.04em; margin-bottom: 2rem; padding-right: 1.5rem; line-height: 1.5; }
+.vj-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.vj-btn { padding: 0.8rem 0.5rem; background: transparent; border: 1px solid rgba(255,255,255,0.18); color: var(--text-primary); font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: border-color 0.25s, color 0.25s; }
+.vj-btn:hover:not(.unavailable) { border-color: var(--accent); color: var(--accent); }
+.vj-btn.unavailable { opacity: 0.3; cursor: not-allowed; }
 
 /* Credits Poster Grid */
 .credits-section { padding: 6rem 4rem 4rem; position: relative; z-index: 2; }
@@ -1630,8 +1594,11 @@ main>section:first-child:not(.hero) {
     .track-name { font-size: 0.82rem; }
 
     /* --- Video Section --- */
-    .video-section { padding: 8rem 1.5rem 4rem; }
-    .video-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .video-section { padding-top: 11rem; }
+    .video-list-container { width: 100%; padding: 0 1rem; }
+    .video-list-item { grid-template-columns: minmax(0, 1fr) auto; padding: 0.7rem 0.8rem; }
+    .video-list-item .vl-game { display: none; }
+    .video-list-section-header { padding: 1rem 0.8rem 0.4rem; }
 
     /* --- Credits Section --- */
     .credits-section { padding: 8rem 1rem 2rem; }

@@ -247,39 +247,45 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCredits(null, e.detail.lang);
     });
 
-    // --- Render Video Grid from JSON ---
-    function renderVideos(items) {
-        const grid = document.getElementById('video-grid');
-        if (!grid) return;
-        const playSvg = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5V19L19 12L8 5Z" fill="currentColor"/></svg>`;
-        grid.innerHTML = items.map(item => {
-            if (item.type === 'modal') {
-                const htmlAttr = item.html ? ` data-video-html="${item.html.replace(/"/g, '&quot;')}"` : '';
-                return `<div class="video-card glass-panel" data-tilt data-video-modal="${item.src}"${htmlAttr}>
-                    <div class="video-thumbnail">
-                        <div class="placeholder-visual ${item.visual}"></div>
-                        <div class="play-overlay">${playSvg}</div>
-                    </div>
-                    <div class="video-info"><h3>${item.title}</h3><p>${item.role}</p></div>
-                </div>`;
-            } else {
-                return `<a href="${item.src}" target="_blank" class="video-card glass-panel" data-tilt>
-                    <div class="video-thumbnail">
-                        <div class="placeholder-visual ${item.visual}"></div>
-                        <div class="play-overlay">${playSvg}</div>
-                    </div>
-                    <div class="video-info"><h3>${item.title}</h3><p>${item.role}</p></div>
-                </a>`;
+    // --- Render Video List from JSON ---
+    let videoItems = [];
+
+    function renderVideos(items, lang) {
+        if (items) videoItems = items;
+        const ul = document.getElementById('video-list');
+        if (!ul) return;
+        const isZh = (lang || localStorage.getItem('luminium-lang') || 'en') === 'zh';
+        ul.innerHTML = videoItems.map(item => {
+            if (item.type === 'section') {
+                const label = isZh ? item.label : (item.label_en || item.label);
+                return `<li class="video-list-section-header"><span>- ${label} -</span></li>`;
             }
+            const game = isZh ? item.game : (item.game_en || item.game || '');
+            const role = isZh ? item.role : (item.role_en || item.role || '');
+            return `<li class="video-list-item"
+                data-url-cn="${item.url_cn || ''}"
+                data-url-global="${item.url_global || ''}"
+                data-title="${item.title}">
+                <div class="vl-title">${item.title}</div>
+                <div class="vl-game">${game}</div>
+                <div class="vl-role">${role}</div>
+            </li>`;
         }).join('');
 
-        // Re-bind modal triggers for dynamically rendered cards
-        grid.querySelectorAll('[data-video-modal]').forEach(card => {
-            card.addEventListener('click', () => {
-                openVideoModal(card.getAttribute('data-video-modal'), card.getAttribute('data-video-html'));
+        ul.querySelectorAll('.video-list-item').forEach(item => {
+            item.addEventListener('click', () => {
+                openJumpModal(
+                    item.getAttribute('data-title'),
+                    item.getAttribute('data-url-cn'),
+                    item.getAttribute('data-url-global')
+                );
             });
         });
     }
+
+    document.addEventListener('langchange', function(e) {
+        renderVideos(null, e.detail.lang);
+    });
 
     function loadData(globalVar, fetchUrl, onData, onError) {
         if (window[globalVar]) {
@@ -401,57 +407,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Video Modal ---
-    const videoModal = document.getElementById('video-modal');
-    const videoIframe = document.getElementById('video-modal-iframe');
-    const videoModalClose = document.querySelector('.video-modal-close');
+    // --- Video Jump Modal ---
+    const vjOverlay = document.getElementById('video-jump-modal');
+    const vjTitleEl = vjOverlay.querySelector('.vj-title');
+    const vjBtnCn = document.getElementById('vj-btn-cn');
+    const vjBtnGlobal = document.getElementById('vj-btn-global');
+    const vjClose = vjOverlay.querySelector('.vj-close');
 
-    const videoModalBox = document.querySelector('.video-modal-box');
+    function openJumpModal(title, urlCn, urlGlobal) {
+        const isZh = (localStorage.getItem('luminium-lang') || 'en') === 'zh';
+        vjTitleEl.textContent = title;
 
-    function openVideoModal(src, html) {
-        if (html) {
-            videoIframe.style.display = 'none';
-            let injected = videoModalBox.querySelector('.video-modal-injected');
-            if (!injected) {
-                injected = document.createElement('div');
-                injected.className = 'video-modal-injected';
-                videoModalBox.appendChild(injected);
-            }
-            injected.innerHTML = html;
-            // Apply full-size styles and fix permissions on any iframe inside the injected HTML
-            const inner = injected.querySelector('iframe');
-            if (inner) {
-                inner.style.cssText = 'width:100%;height:100%;border:none;';
-                inner.removeAttribute('scrolling');
-                // Fix protocol-relative URLs (// → https://)
-                const isrc = inner.getAttribute('src') || '';
-                if (isrc.startsWith('//')) inner.setAttribute('src', 'https:' + isrc);
-                // Grant autoplay / fullscreen permissions required by Bilibili
-                inner.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; web-share');
-                inner.setAttribute('allowfullscreen', 'true');
-            }
+        const labelCn     = isZh ? '国内观看' : 'Watch (CN)';
+        const labelGlobal = isZh ? '国外观看' : 'Watch (Global)';
+        const labelNone   = isZh ? '暂无渠道'  : 'Not Available';
+
+        if (urlCn) {
+            vjBtnCn.textContent = labelCn;
+            vjBtnCn.classList.remove('unavailable');
+            vjBtnCn.onclick = () => window.open(urlCn, '_blank');
         } else {
-            videoIframe.style.display = '';
-            videoIframe.src = src;
+            vjBtnCn.textContent = labelNone;
+            vjBtnCn.classList.add('unavailable');
+            vjBtnCn.onclick = null;
         }
-        videoModal.classList.add('active');
+
+        if (urlGlobal) {
+            vjBtnGlobal.textContent = labelGlobal;
+            vjBtnGlobal.classList.remove('unavailable');
+            vjBtnGlobal.onclick = () => window.open(urlGlobal, '_blank');
+        } else {
+            vjBtnGlobal.textContent = labelNone;
+            vjBtnGlobal.classList.add('unavailable');
+            vjBtnGlobal.onclick = null;
+        }
+
+        vjOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
-    function closeVideoModal() {
-        videoModal.classList.remove('active');
-        videoIframe.src = '';
-        videoIframe.style.display = '';
-        const injected = videoModalBox.querySelector('.video-modal-injected');
-        if (injected) injected.innerHTML = '';
+    function closeJumpModal() {
+        vjOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    if (videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
-    videoModal.addEventListener('click', (e) => {
-        if (e.target === videoModal) closeVideoModal();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeVideoModal();
-    });
+    vjClose.addEventListener('click', closeJumpModal);
+    vjOverlay.addEventListener('click', (e) => { if (e.target === vjOverlay) closeJumpModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeJumpModal(); });
 });

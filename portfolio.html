@@ -131,11 +131,12 @@
             </div>
         </section>
 
-        <!-- Module 2: Video Player -->
+        <!-- Module 2: Video List -->
         <section id="video-showcase" class="video-section tab-section" data-scroll-section>
-            <h2 class="section-title" style="margin-left: max(4rem, calc((100vw - 1400px) / 2));" data-i18n="section.videoreel">Video Reel</h2>
-            <div class="video-grid" id="video-grid">
-                <!-- Populated dynamically from assets/prortfolio/doc/videos.json -->
+            <div class="video-list-container">
+                <ul id="video-list" class="video-list">
+                    <!-- Populated dynamically from assets/prortfolio/doc/videos.json -->
+                </ul>
             </div>
         </section>
 
@@ -162,11 +163,16 @@
         </footer>
     </main>
 
-    <!-- Video Modal -->
-    <div id="video-modal" class="video-modal-overlay">
-        <div class="video-modal-box">
-            <button class="video-modal-close" aria-label="Close">&times;</button>
-            <iframe id="video-modal-iframe" class="video-modal-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+    <!-- Video Jump Modal -->
+    <div id="video-jump-modal" class="vj-overlay">
+        <div class="vj-box">
+            <button class="vj-close" aria-label="Close">&times;</button>
+            <p class="vj-label" data-i18n="vj.label">WATCH ON</p>
+            <p class="vj-title"></p>
+            <div class="vj-buttons">
+                <button class="vj-btn" id="vj-btn-cn"></button>
+                <button class="vj-btn" id="vj-btn-global"></button>
+            </div>
         </div>
     </div>
 

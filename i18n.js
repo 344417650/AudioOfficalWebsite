@@ -53,6 +53,7 @@
             'tab.video': 'Video',
             'player.select': 'SELECT A TRACK',
             'btn.downloadAll': 'DOWNLOAD ALL',
+            'vj.label': 'WATCH ON',
             // Blog
             'blog.title.1': 'KNOWLEDGE',
             'blog.title.2': 'BASE',
@@ -118,6 +119,7 @@
             'tab.video': '\u89c6\u9891',
             'player.select': '\u8bf7\u9009\u62e9\u66f2\u76ee',
             'btn.downloadAll': '\u4e0b\u8f7d\u5168\u90e8',
+            'vj.label': '\u89c2\u770b\u6e20\u9053',
             // Blog
             'blog.title.1': '\u77e5\u8bc6',
             'blog.title.2': '\u5e93',
