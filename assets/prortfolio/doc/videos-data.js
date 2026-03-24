@@ -18,6 +18,15 @@ window.videosData = {
       "type": "section",
       "label": "Gameplay视频",
       "label_en": "Gameplay"
+    },
+    {
+      "title": "Fellow Moon Sound Trailer",
+      "game": "新月同行",
+      "game_en": "Fellow Moon",
+      "role": "音乐制作，音效设计",
+      "role_en": "Music, Sound Design",
+      "url_cn": "https://www.bilibili.com/video/BV1tPwazoENm",
+      "url_global": ""
     }
   ]
 };
