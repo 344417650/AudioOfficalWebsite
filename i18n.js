@@ -52,6 +52,7 @@
             'tab.music': 'Music',
             'tab.video': 'Video',
             'player.select': 'SELECT A TRACK',
+            'btn.downloadAll': 'DOWNLOAD ALL',
             // Blog
             'blog.title.1': 'KNOWLEDGE',
             'blog.title.2': 'BASE',
@@ -116,6 +117,7 @@
             'tab.music': '\u97f3\u4e50',
             'tab.video': '\u89c6\u9891',
             'player.select': '\u8bf7\u9009\u62e9\u66f2\u76ee',
+            'btn.downloadAll': '\u4e0b\u8f7d\u5168\u90e8',
             // Blog
             'blog.title.1': '\u77e5\u8bc6',
             'blog.title.2': '\u5e93',
