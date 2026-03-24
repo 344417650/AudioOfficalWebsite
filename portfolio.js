@@ -165,8 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
         playlistItems = Array.from(document.querySelectorAll('.playlist-item'));
 
         // Playlist Clicks
+        let clickCooldown = false;
         playlistItems.forEach((item, index) => {
             item.addEventListener('click', () => {
+                if (clickCooldown) return;
+                clickCooldown = true;
+                setTimeout(() => { clickCooldown = false; }, 300);
+
                 if(currentTrackIndex === index) {
                     togglePlay();
                 } else {
