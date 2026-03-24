@@ -31,26 +31,6 @@
       "role_en": "Music Director · Sound Director · Audio Programming"
     },
     {
-      "file": "shanyao_nikki.jpeg",
-      "title": "闪耀暖暖",
-      "title_en": "Shining Nikki",
-      "company": "叠纸网络",
-      "company_en": "Papergames",
-      "platform": "Mobile",
-      "role": "合作作曲",
-      "role_en": "Composer"
-    },
-    {
-      "file": "infinity_nikki.jpg",
-      "title": "无限暖暖",
-      "title_en": "Infinity Nikki",
-      "company": "叠纸网络",
-      "company_en": "Papergames",
-      "platform": "PC / Mobile",
-      "role": "合作作曲",
-      "role_en": "Composer"
-    },
-    {
       "file": "arknights_endfield.jpg",
       "title": "明日方舟终末地",
       "title_en": "Arknights: Endfield",
@@ -121,14 +101,34 @@
       "role_en": "Composer"
     },
     {
-      "file": "reverse_1999.jpg",
-      "title": "重返未来1999",
-      "title_en": "Reverse: 1999",
-      "company": "深蓝互动",
-      "company_en": "Bluepoch",
-      "platform": "Mobile",
+      "file": "GF2.jpg",
+      "title": "少女前线2：追放",
+      "title_en": "Girls' Frontline 2: Exilium",
+      "company": "散爆网络",
+      "company_en": "Sunborn",
+      "platform": "PC / Mobile",
       "role": "合作作曲",
       "role_en": "Composer"
+    },
+    {
+      "file": "once_human.jpg",
+      "title": "七日世界",
+      "title_en": "Once Human",
+      "company": "网易游戏",
+      "company_en": "NetEase Games",
+      "platform": "PC",
+      "role": "合作作曲",
+      "role_en": "Composer"
+    },
+    {
+      "file": "boundary.jpg",
+      "title": "边境",
+      "title_en": "Boundary",
+      "company": "柳叶刀",
+      "company_en": "Surgical Scalpels",
+      "platform": "PC",
+      "role": "主作曲",
+      "role_en": "Lead Composer"
     },
     {
       "file": "azur_lane.jpg",
