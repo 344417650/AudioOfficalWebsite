@@ -6,13 +6,14 @@ window.videosData = {
       "label_en": "PV"
     },
     {
-      "title": "Fellow Moon Sound Trailer",
-      "game": "新月同行",
-      "game_en": "Fellow Moon",
-      "role": "音效总监",
-      "role_en": "Sound Director",
-      "url_cn": "https://www.bilibili.com/video/BV1tPwazoENm",
-      "url_global": ""
+      "title": "《少女前线2：追放》全球上线PV：少女正在前线",
+      "title_en": "Girls' Frontline 2: Exilium Official Release Trailer | Frontline with Girls",
+      "game": "少女前线2：追放",
+      "game_en": "Girls' Frontline 2: Exilium",
+      "role": "音乐制作，音效设计",
+      "role_en": "Music, Sound Design",
+      "url_cn": "https://www.bilibili.com/video/BV1GWz5YwETY",
+      "url_global": "https://www.youtube.com/watch?v=hF_hPr7NzLA"
     },
     {
       "type": "section",
