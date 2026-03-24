@@ -260,13 +260,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const label = isZh ? item.label : (item.label_en || item.label);
                 return `<li class="video-list-section-header"><span>- ${label} -</span></li>`;
             }
+            const title = isZh ? item.title : (item.title_en || item.title);
             const game = isZh ? item.game : (item.game_en || item.game || '');
             const role = isZh ? item.role : (item.role_en || item.role || '');
             return `<li class="video-list-item"
                 data-url-cn="${item.url_cn || ''}"
                 data-url-global="${item.url_global || ''}"
-                data-title="${item.title}">
-                <div class="vl-title">${item.title}</div>
+                data-title="${title}">
+                <div class="vl-title">${title}</div>
                 <div class="vl-game">${game}</div>
                 <div class="vl-role">${role}</div>
             </li>`;
