@@ -6,6 +6,26 @@ window.videosData = {
       "label_en": "PV"
     },
     {
+      "title": "《新月同行》血茧时辙 版本PV：上篇——液相层析",
+      "title_en": "Fellow Moon: Blood Cocoon and Time’s Path – Part One – Liquid Chromatography",
+      "game": "新月同行",
+      "game_en": "Fellow Moon",
+      "role": "音乐制作，音效设计",
+      "role_en": "Music, Sound Design",
+      "url_cn": "https://www.bilibili.com/video/BV1fqL3zDEfs",
+      "url_global": "https://www.youtube.com/watch?v=4MRkpvmLpN8"
+    },
+    {
+      "title": "《新月同行》深入暗影 版本PV：罔两之志",
+      "title_en": "Fellow Moon: Into the Shadows – Version PV: The ambition of a shadow’s fringe",
+      "game": "新月同行",
+      "game_en": "Fellow Moon",
+      "role": "音乐制作，音效设计",
+      "role_en": "Music, Sound Design",
+      "url_cn": "https://www.bilibili.com/video/BV1UWCqYPEKL",
+      "url_global": "https://www.youtube.com/watch?v=CQqDNkfn8uU"
+    },
+    {
       "title": "《少女前线2：追放》全球上线PV：少女正在前线",
       "title_en": "Girls' Frontline 2: Exilium Official Release Trailer | Frontline with Girls",
       "game": "少女前线2：追放",
@@ -14,6 +34,16 @@ window.videosData = {
       "role_en": "Music, Sound Design",
       "url_cn": "https://www.bilibili.com/video/BV1GWz5YwETY",
       "url_global": "https://www.youtube.com/watch?v=hF_hPr7NzLA"
+    },
+    {
+      "title": "循此苦旅，直抵群星（Per aspera ad astra）",
+      "title_en": "Through hardship, To the stars (Per aspera ad astra)",
+      "game": "亚光:星间千年",
+      "game_en": "Yaguang: Interstellar Millennium",
+      "role": "音乐制作，音效设计",
+      "role_en": "Music, Sound Design",
+      "url_cn": "https://www.bilibili.com/video/BV1z142197YV",
+      "url_global": "https://www.facebook.com/watch/?v=860775702626698"
     },
     {
       "type": "section",
