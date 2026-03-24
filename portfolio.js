@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(currentTrackIndex === index) {
                     togglePlay();
                 } else {
-                    pendingPlay = isPlaying;
+                    pendingPlay = true;
                     currentTrackIndex = index;
                     loadTrack(index);
                 }
