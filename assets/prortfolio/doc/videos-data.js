@@ -46,6 +46,16 @@ window.videosData = {
       "url_global": "https://www.facebook.com/watch/?v=860775702626698"
     },
     {
+      "title": "《逆向坍塌：F》首曝PV&实机演示",
+      "title_en": "Reverse Collapse：F - Official Announcement Trailer",
+      "game": "逆向坍塌：F",
+      "game_en": "Reverse Collapse: F",
+      "role": "音乐制作，音效设计",
+      "role_en": "Music, Sound Design",
+      "url_cn": "https://www.bilibili.com/video/BV1DZRKBuExZ",
+      "url_global": "https://www.youtube.com/watch?v=GCz-fNENpEo"
+    },
+    {
       "type": "section",
       "label": "Gameplay视频",
       "label_en": "Gameplay"
