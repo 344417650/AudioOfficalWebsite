@@ -825,7 +825,7 @@ footer {
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -834,18 +834,24 @@ footer {
     letter-spacing: 0.05em;
 }
 
-.socials {
+.footer-legal {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
 }
 
-.socials a {
-    color: var(--text-primary);
+.footer-legal p {
+    margin: 0;
+}
+
+.icp-link {
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.socials a:hover {
+.icp-link:hover {
     color: var(--accent);
 }
 

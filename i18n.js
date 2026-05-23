@@ -9,6 +9,7 @@
             'nav.contact': "Let's Talk",
             // Footer
             'footer.copy': '\u00a9 2026 LUMINIUM STUDIO. ALL RIGHTS RESERVED.',
+            'footer.icp': '\u6e1dICP\u59072026009732\u53f7',
             // index.html — Hero
             'hero.subtitle': 'Luminium Studio is a premier creative audio house in Chongqing & Nanjing. We deliver AAA quality sound design, original music, voice over, and audio programming for global interactive media.',
             'hero.btn.reel': 'Watch Reel',
@@ -75,6 +76,7 @@
             'nav.contact': '\u8054\u7cfb\u6211\u4eec',
             // Footer
             'footer.copy': '\u00a9 2026 LUMINIUM STUDIO. \u7248\u6743\u6240\u6709\u3002',
+            'footer.icp': '\u6e1dICP\u59072026009732\u53f7',
             // index.html — Hero
             'hero.subtitle': 'Luminium Studio \u662f\u4f4d\u4e8e\u91cd\u5e86\u4e0e\u5357\u4eac\u7684\u9876\u5c16\u521b\u610f\u97f3\u9891\u5de5\u4f5c\u5ba4\uff0c\u4e3a\u5168\u7403\u4e92\u52a8\u5a92\u4f53\u63d0\u4f9b AAA \u7ea7\u522b\u97f3\u6548\u5236\u4f5c\u3001\u539f\u521b\u97f3\u4e50\u3001\u914d\u97f3\u4ee5\u53ca\u97f3\u9891\u7a0b\u5e8f\u670d\u52a1\u3002',
             'hero.btn.reel': '\u89c2\u770b\u4f5c\u54c1\u96c6',
