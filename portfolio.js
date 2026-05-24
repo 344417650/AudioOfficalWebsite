@@ -213,9 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loadTrack(0);
         }
 
-        // Update download button count
-        const dlCount = document.querySelector('.dl-count');
-        if (dlCount) dlCount.textContent = `(${playlistItems.length})`;
     }
 
     // --- Render Credits Grid from JSON ---
@@ -310,29 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadData('playlistData', 'assets/prortfolio/doc/playlist.json',
         data => { renderPlaylist(data.tracks); initPlaylist(); },
         err => console.error('Failed to load playlist:', err));
-
-    // --- Download All Tracks ---
-    const dlBtn = document.getElementById('btn-download-all');
-    if (dlBtn) {
-        dlBtn.addEventListener('click', () => {
-            const srcs = playlistItems.map(item => item.getAttribute('data-src')).filter(Boolean);
-            if (!srcs.length) return;
-            dlBtn.classList.add('downloading');
-            srcs.forEach((src, i) => {
-                setTimeout(() => {
-                    const a = document.createElement('a');
-                    a.href = src;
-                    a.download = src.split('/').pop();
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    if (i === srcs.length - 1) {
-                        setTimeout(() => dlBtn.classList.remove('downloading'), 1000);
-                    }
-                }, i * 200);
-            });
-        });
-    }
 
     // --- Volume Click-Toggle ---
     const volWrapper = document.querySelector('.hx-volume-wrapper');
