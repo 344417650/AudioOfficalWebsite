@@ -309,16 +309,6 @@ body {
     text-transform: uppercase;
 }
 
-.contact-modal h2 {
-    margin-bottom: 1.8rem;
-    padding-right: 2.5rem;
-    font-family: var(--font-heading);
-    font-size: clamp(1.45rem, 4vw, 2.2rem);
-    line-height: 1.15;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-}
-
 .contact-modal-list {
     display: grid;
     gap: 0.9rem;
@@ -345,11 +335,6 @@ body {
     font-family: var(--font-heading);
     font-size: 0.95rem;
     letter-spacing: 0.08em;
-}
-
-.contact-role {
-    color: var(--text-secondary);
-    font-size: 0.85rem;
 }
 
 .contact-email {
@@ -1603,10 +1588,6 @@ main>section:first-child:not(.hero) {
 
     .contact-modal {
         padding: 2rem 1.25rem 1.25rem;
-    }
-
-    .contact-modal h2 {
-        margin-bottom: 1.3rem;
     }
 
     .contact-email-card {

@@ -9,9 +9,6 @@
             'nav.contact': "Let's Talk",
             // Contact modal
             'contact.modal.kicker': 'Contact',
-            'contact.modal.title': 'Get in touch',
-            'contact.modal.gkRole': 'Music Director / Lead Composer',
-            'contact.modal.breaklessRole': 'Sound Director / Lead Sound Designer',
             'contact.modal.close': 'Close contact dialog',
             // Footer
             'footer.copy': '\u00a9 2026 LUMINIUM STUDIO. ALL RIGHTS RESERVED.',
@@ -81,9 +78,6 @@
             'nav.contact': '\u8054\u7cfb\u6211\u4eec',
             // Contact modal
             'contact.modal.kicker': '\u8054\u7cfb\u6211\u4eec',
-            'contact.modal.title': '\u8054\u7cfb\u4e24\u4f4d\u4e3b\u7406\u4eba',
-            'contact.modal.gkRole': '\u97f3\u4e50\u603b\u76d1 / \u4e3b\u4f5c\u66f2',
-            'contact.modal.breaklessRole': '\u97f3\u6548\u603b\u76d1 / \u4e3b\u97f3\u6548\u8bbe\u8ba1\u5e08',
             'contact.modal.close': '\u5173\u95ed\u8054\u7cfb\u65b9\u5f0f\u5f39\u7a97',
             // Footer
             'footer.copy': '\u00a9 2026 LUMINIUM STUDIO. \u7248\u6743\u6240\u6709\u3002',
