@@ -37,7 +37,7 @@
             <a href="studio.html" class="nav-item" data-i18n="nav.studio">Studio</a>
             <a href="portfolio.html" class="nav-item" data-i18n="nav.portfolio">Portfolio</a>
             <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
-            <a href="#contact" class="nav-item contact-btn" data-i18n="nav.contact">Let's Talk</a>
+            <a href="#contact" class="nav-item contact-btn" data-contact-open aria-haspopup="dialog" aria-controls="contact-modal" data-i18n="nav.contact">Let's Talk</a>
             <button class="lang-toggle-btn" aria-label="Switch language">EN</button>
         </div>
     </nav>
@@ -114,6 +114,26 @@
             </div>
         </footer>
     </main>
+
+    <div id="contact-modal" class="contact-modal-overlay" hidden>
+        <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+            <button type="button" class="contact-modal-close" data-contact-close aria-label="Close contact dialog" data-i18n-aria-label="contact.modal.close">&times;</button>
+            <p class="contact-modal-kicker" data-i18n="contact.modal.kicker">Contact</p>
+            <h2 id="contact-modal-title" data-i18n="contact.modal.title">Get in touch</h2>
+            <div class="contact-modal-list">
+                <a class="contact-email-card" href="mailto:hwaken1989@gmail.com">
+                    <span class="contact-person">G.K</span>
+                    <span class="contact-role" data-i18n="contact.modal.gkRole">Music Director / Lead Composer</span>
+                    <span class="contact-email">hwaken1989@gmail.com</span>
+                </a>
+                <a class="contact-email-card" href="mailto:breaklessyuan@gmail.com">
+                    <span class="contact-person">Breakless</span>
+                    <span class="contact-role" data-i18n="contact.modal.breaklessRole">Sound Director / Lead Sound Designer</span>
+                    <span class="contact-email">breaklessyuan@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="i18n.js"></script>
     <script src="main.js"></script>

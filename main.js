@@ -107,6 +107,55 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('click', closeDrawer);
     });
 
+    // --- Contact Modal ---
+    const contactModal = document.getElementById('contact-modal');
+    const contactOpeners = document.querySelectorAll('[data-contact-open]');
+    let lastContactTrigger = null;
+
+    function openContactModal(trigger) {
+        if (!contactModal) return;
+        lastContactTrigger = trigger || document.activeElement;
+        contactModal.hidden = false;
+        requestAnimationFrame(() => {
+            contactModal.classList.add('is-open');
+            const firstFocusable = contactModal.querySelector('button, a[href], [tabindex]:not([tabindex="-1"])');
+            if (firstFocusable) firstFocusable.focus();
+        });
+        closeDrawer();
+    }
+
+    function closeContactModal() {
+        if (!contactModal || contactModal.hidden) return;
+        contactModal.classList.remove('is-open');
+        window.setTimeout(() => {
+            contactModal.hidden = true;
+            if (lastContactTrigger && typeof lastContactTrigger.focus === 'function') {
+                lastContactTrigger.focus();
+            }
+        }, 240);
+    }
+
+    contactOpeners.forEach(el => {
+        el.addEventListener('click', (event) => {
+            event.preventDefault();
+            openContactModal(el);
+        });
+    });
+
+    if (contactModal) {
+        contactModal.querySelectorAll('[data-contact-close]').forEach(el => {
+            el.addEventListener('click', closeContactModal);
+        });
+
+        contactModal.addEventListener('click', (event) => {
+            if (event.target === contactModal) closeContactModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeContactModal();
+        });
+    }
+
     console.log("Luminium Studio: Audio Player Initialized.");
 
     // --- Magnetic Button Effect ---
